@@ -645,27 +645,49 @@
                 </div>
 
                 <!-- PROJECT 02 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="images/radial-engine.png" alt="Radial Engine CAD Design">
-                        <img src="images/All-view.png" alt="Radial Engine CAD Design - Detail View">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-number">PROJECT 02</div>
-                        <h3>Radial Engine CAD Design & Assembly</h3>
-                        <p>
-                            Designed individual engine components and developed a fully constrained
-                            radial engine assembly in SolidWorks, including engineering drawings and
-                            fit/interference checks.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">SolidWorks</span>
-                            <span class="tag">CAD</span>
-                            <span class="tag">Assembly</span>
-                            <span class="tag">Engineering Drawing</span>
-                        </div>
-                    </div>
-                </div>
+<div class="project-card">
+    <div class="project-image">
+        <img src="images/radial-engine.png"
+             alt="Radial Engine CAD Design"
+             class="active">
+
+        <img src="images/radial-engine-2.png"
+             alt="Radial Engine CAD Design - Detail View">
+
+        <button class="gallery-prev"
+                onclick="changeImage(this, -1)"
+                aria-label="Previous image">
+            &#10094;
+        </button>
+
+        <button class="gallery-next"
+                onclick="changeImage(this, 1)"
+                aria-label="Next image">
+            &#10095;
+        </button>
+
+        <div class="gallery-counter">1 / 2</div>
+    </div>
+
+    <div class="project-content">
+        <div class="project-number">PROJECT 02</div>
+
+        <h3>Radial Engine CAD Design & Assembly</h3>
+
+        <p>
+            Designed individual engine components and developed a fully constrained
+            radial engine assembly in SolidWorks, including engineering drawings and
+            fit/interference checks.
+        </p>
+
+        <div class="tags">
+            <span class="tag">SolidWorks</span>
+            <span class="tag">CAD</span>
+            <span class="tag">Assembly</span>
+            <span class="tag">Engineering Drawing</span>
+        </div>
+    </div>
+</div>
 
                 <!-- PROJECT 03 -->
                 <div class="project-card">
