@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abdul Wahid Sibly | Mechanical Design Engineer</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #222;
+            background: #f5f5f5;
+        }
+
+        header {
+            background: #111;
+            color: white;
+            padding: 20px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            font-size: 20px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #aaa;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 8%;
+            background: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h3 {
+            font-size: 25px;
+            font-weight: normal;
+            margin-bottom: 25px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #555;
+            max-width: 700px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: #111;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        section {
+            padding: 80px 8%;
+        }
+
+        section h2 {
+            font-size: 35px;
+            margin-bottom: 35px;
+        }
+
+        .about {
+            background: #eeeeee;
+        }
+
+        .about p {
+            max-width: 850px;
+            font-size: 17px;
+        }
+
+        .skills {
+            background: white;
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            padding: 25px;
+            background: #f3f3f3;
+            border-left: 4px solid #111;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .projects {
+            background: #eeeeee;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 25px;
+            border-radius: 5px;
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #555;
+        }
+
+        .tag {
+            display: inline-block;
+            margin-top: 15px;
+            margin-right: 5px;
+            padding: 5px 9px;
+            background: #ddd;
+            font-size: 12px;
+            border-radius: 3px;
+        }
+
+        .achievements {
+            background: white;
+        }
+
+        .achievements li {
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+
+        .contact {
+            background: #111;
+            color: white;
+        }
+
+        .contact p {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #000;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            nav ul {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h3 {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <nav>
+        <h2>ABDUL WAHID SIBLY</h2>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Abdul Wahid Sibly</h1>
+
+        <h3>
+            Mechanical Design Engineer |
+            CAD Design & Product Development
+        </h3>
+
+        <p>
+            Mechanical Engineering graduate with practical experience
+            in CAD design, structural analysis, FEA, CFD, motorsport
+            engineering, manufacturing, and product development.
+        </p>
+
+        <a href="#projects" class="btn">
+            Explore My Projects
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+    <h2>About Me</h2>
+
+    <p>
+        I am a Mechanical Engineering graduate from the Military Institute
+        of Science and Technology (MIST), with a strong interest in product
+        design, CAD modeling, structural analysis, and engineering innovation.
+        My practical experience includes Formula Student vehicle development,
+        engineering simulation, industrial machinery maintenance, fabrication,
+        and engineering research.
+    </p>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section class="skills" id="skills">
+
+    <h2>Technical Skills</h2>
+
+    <div class="skill-grid">
+
+        <div class="skill-card">
+            <h3>CAD & Design</h3>
+            <p>
+                SolidWorks, Part Modeling, Assembly Design,
+                Weldments, Engineering Drawings, BOM Creation
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>FEA & Simulation</h3>
+            <p>
+                ANSYS Workbench, Static Structural Analysis,
+                Stress & Deflection Analysis
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>CFD</h3>
+            <p>
+                ANSYS Fluent, Fluid Flow Analysis,
+                Meshing, Convergence and Numerical Validation
+            </p>
+        </div>
+
+        <div class="skill-card">
+            <h3>Manufacturing</h3>
+            <p>
+                DFM, Welding, Fabrication, Machining,
+                Machine Tolerances and Assembly Planning
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section class="projects" id="projects">
+
+    <h2>Featured Projects</h2>
+
+    <div class="project-grid">
+
+        <!-- PROJECT 01 -->
+
+        <div class="project-card">
+
+            <h3>
+                01. Formula Student Racing Chassis
+            </h3>
+
+            <p>
+                Designed and optimized a Formula Student space-frame
+                chassis focusing on structural rigidity, safety,
+                manufacturability, performance, and weight reduction.
+            </p>
+
+            <span class="tag">SolidWorks</span>
+            <span class="tag">ANSYS</span>
+            <span class="tag">FEA</span>
+            <span class="tag">Motorsport</span>
+
+        </div>
+
+
+        <!-- PROJECT 02 -->
+
+        <div class="project-card">
+
+            <h3>
+                02. Radial Engine CAD Design & Assembly
+            </h3>
+
+            <p>
+                Developed a complete radial engine CAD model including
+                individual components, fully constrained assembly,
+                engineering drawings, and fit/interference checks.
+            </p>
+
+            <span class="tag">SolidWorks</span>
+            <span class="tag">Assembly</span>
+            <span class="tag">Engineering Drawing</span>
+
+        </div>
+
+
+        <!-- PROJECT 03 -->
+
+        <div class="project-card">
+
+            <h3>
+                03. F1 Car from Scrap
+            </h3>
+
+            <p>
+                Designed and fabricated a miniature F1-inspired vehicle
+                using recycled engine components, combining CAD design,
+                fabrication planning, welding, machining, and assembly.
+            </p>
+
+            <span class="tag">CAD</span>
+            <span class="tag">Fabrication</span>
+            <span class="tag">Welding</span>
+
+        </div>
+
+
+        <!-- PROJECT 04 -->
+
+        <div class="project-card">
+
+            <h3>
+                04. Folding Drone Frame
+            </h3>
+
+            <p>
+                Designed a lightweight folding drone frame with focus on
+                portability, structural integrity, component integration,
+                and a functional folding mechanism.
+            </p>
+
+            <span class="tag">SolidWorks</span>
+            <span class="tag">3D Printing</span>
+            <span class="tag">Product Design</span>
+
+        </div>
+
+
+        <!-- PROJECT 05 -->
+
+        <div class="project-card">
+
+            <h3>
+                05. Laminar Pipe Flow Analysis
+            </h3>
+
+            <p>
+                Analyzed laminar flow through a circular pipe using
+                ANSYS Fluent and compared CFD results with the analytical
+                Hagen–Poiseuille solution through mesh independence,
+                convergence, and numerical validation.
+            </p>
+
+            <span class="tag">ANSYS Fluent</span>
+            <span class="tag">CFD</span>
+            <span class="tag">Meshing</span>
+            <span class="tag">Validation</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ACHIEVEMENTS -->
+
+<section class="achievements" id="achievements">
+
+    <h2>Achievements & Leadership</h2>
+
+    <ul>
+
+        <li>
+            Senior Engineer – MIST Blitz Formula Student Team
+        </li>
+
+        <li>
+            Best Foreign Team Award – Formula Student Competition
+        </li>
+
+        <li>
+            Best Presentation Performance in Static Event
+        </li>
+
+        <li>
+            4th Place – Business Plan Presentation, FSCC 2025
+        </li>
+
+        <li>
+            Published research on eco-friendly ecobricks for
+            sustainable waste management
+        </li>
+
+    </ul>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <h2>Let's Connect</h2>
+
+    <p>
+        Interested in mechanical design, product development,
+        CAD engineering, and engineering simulation.
+    </p>
+
+    <p>
+        Email: YOUR_EMAIL@example.com
+    </p>
+
+    <p>
+        LinkedIn: YOUR_LINKEDIN
+    </p>
+
+</section>
+
+
+<footer>
+
+    © 2026 Abdul Wahid Sibly. All Rights Reserved.
+
+</footer>
+
+</body>
+</html>
