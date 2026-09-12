@@ -3,14 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Abdul Wahid Sibly | Mechanical Design Engineer</title>
-
-    <meta name="description"
-        content="Portfolio of Abdul Wahid Sibly, Mechanical Design Engineer specializing in CAD, product development, FEA, CFD and motorsport engineering.">
+    <meta name="description" content="Portfolio of Abdul Wahid Sibly, Mechanical Design Engineer specializing in CAD, product development, FEA, CFD and motorsport engineering.">
 
     <style>
-
         * {
             margin: 0;
             padding: 0;
@@ -38,9 +34,7 @@
             margin: auto;
         }
 
-        /* =========================
-           NAVIGATION
-        ========================= */
+        /* ========== NAVIGATION ========== */
 
         nav {
             position: fixed;
@@ -48,19 +42,15 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-
             background: rgba(11, 13, 16, 0.92);
             backdrop-filter: blur(10px);
-
             border-bottom: 1px solid #20242a;
         }
 
         .nav-container {
             width: min(1150px, 90%);
             margin: auto;
-
             height: 72px;
-
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -88,16 +78,12 @@
             color: #ffffff;
         }
 
-        /* =========================
-           HERO
-        ========================= */
+        /* ========== HERO ========== */
 
         .hero {
             min-height: 100vh;
-
             display: flex;
             align-items: center;
-
             padding-top: 100px;
         }
 
@@ -109,9 +95,7 @@
             font-size: 13px;
             letter-spacing: 3px;
             text-transform: uppercase;
-
             color: #8d949c;
-
             margin-bottom: 20px;
         }
 
@@ -119,50 +103,37 @@
             font-size: clamp(48px, 8vw, 90px);
             line-height: 0.95;
             letter-spacing: -3px;
-
             margin-bottom: 25px;
         }
 
         .hero h2 {
             font-size: clamp(22px, 3vw, 34px);
             font-weight: 400;
-
             color: #b8bec5;
-
             margin-bottom: 25px;
         }
 
         .hero-description {
             max-width: 700px;
-
             color: #8f969e;
-
             font-size: 17px;
         }
 
         .hero-buttons {
             margin-top: 35px;
-
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
         }
 
-        /* =========================
-           BUTTONS
-        ========================= */
+        /* ========== BUTTONS ========== */
 
         .button {
             display: inline-block;
-
             padding: 12px 22px;
-
             border: 1px solid #363c43;
-
             border-radius: 4px;
-
             font-size: 14px;
-
             transition: 0.3s;
         }
 
@@ -174,7 +145,6 @@
         .button.primary {
             background: #ffffff;
             color: #0b0d10;
-
             border-color: #ffffff;
         }
 
@@ -183,9 +153,7 @@
             color: #ffffff;
         }
 
-        /* =========================
-           SECTIONS
-        ========================= */
+        /* ========== SECTIONS ========== */
 
         section {
             padding: 110px 0;
@@ -193,46 +161,34 @@
 
         .section-label {
             color: #777f88;
-
             font-size: 12px;
             letter-spacing: 3px;
-
             text-transform: uppercase;
-
             margin-bottom: 18px;
         }
 
         section h2 {
             font-size: clamp(32px, 5vw, 52px);
-
             letter-spacing: -1px;
-
             margin-bottom: 25px;
         }
 
         .section-description {
             max-width: 750px;
-
             color: #9299a1;
-
             margin-bottom: 45px;
         }
 
-        /* =========================
-           ABOUT
-        ========================= */
+        /* ========== ABOUT ========== */
 
         .about-grid {
             display: grid;
-
             grid-template-columns: 1fr 1fr;
-
             gap: 70px;
         }
 
         .about-text {
             color: #aeb4bb;
-
             font-size: 17px;
         }
 
@@ -242,55 +198,42 @@
 
         .education {
             border-left: 1px solid #30353b;
-
             padding-left: 30px;
         }
 
         .education h3 {
             font-size: 22px;
-
             margin-bottom: 8px;
         }
 
         .education p {
             color: #8e959d;
-
             margin-bottom: 5px;
         }
 
-        /* =========================
-           SKILLS
-        ========================= */
+        /* ========== SKILLS ========== */
 
         .skills-grid {
             display: grid;
-
             grid-template-columns: repeat(4, 1fr);
-
             gap: 18px;
         }
 
         .skill-card {
             padding: 30px;
-
             border: 1px solid #242930;
-
             background: #101318;
-
             min-height: 220px;
         }
 
         .skill-card h3 {
             margin-bottom: 18px;
-
             font-size: 18px;
         }
 
         .skill-card ul {
             list-style: none;
-
             color: #8e959d;
-
             font-size: 14px;
         }
 
@@ -298,67 +241,46 @@
             margin-bottom: 8px;
         }
 
-        /* =========================
-           PROJECTS
-        ========================= */
+        /* ========== PROJECTS ========== */
 
         .projects-grid {
             display: grid;
-
             grid-template-columns: repeat(2, 1fr);
-
             gap: 25px;
         }
 
         .project-card {
             border: 1px solid #252a30;
-
             background: #101318;
-
             overflow: hidden;
-
             transition: 0.3s;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-
             border-color: #444b53;
         }
-
-        /*
-        =========================
-        PROJECT IMAGE
-        =========================
-        */
 
         .project-image {
             width: 100%;
             height: 300px;
-
             background: #171b20;
-
             display: flex;
             align-items: center;
             justify-content: center;
-
             overflow: hidden;
         }
 
         .project-image img {
             width: 100%;
             height: 100%;
-
             object-fit: cover;
-
             display: block;
         }
 
         .project-image.placeholder {
             color: #646b73;
-
             font-size: 14px;
-
             text-align: center;
         }
 
@@ -368,165 +290,122 @@
 
         .project-number {
             color: #6f7780;
-
             font-size: 12px;
-
             letter-spacing: 2px;
-
             margin-bottom: 10px;
         }
 
         .project-content h3 {
             font-size: 24px;
-
             margin-bottom: 12px;
         }
 
         .project-content p {
             color: #8e959d;
-
             font-size: 14px;
-
             margin-bottom: 18px;
         }
 
         .tags {
             display: flex;
-
             gap: 8px;
-
             flex-wrap: wrap;
         }
 
         .tag {
             border: 1px solid #30363d;
-
             padding: 5px 9px;
-
             font-size: 11px;
-
             color: #8d949c;
         }
 
-        /* =========================
-           FEATURED ANALYSIS
-        ========================= */
+        /* ========== FEATURED ANALYSIS ========== */
 
         .featured {
             margin-top: 30px;
-
             border: 1px solid #282e35;
-
             background: #101318;
-
             padding: 40px;
         }
 
         .featured h3 {
             font-size: 28px;
-
             margin-bottom: 15px;
         }
 
         .featured p {
             color: #9299a1;
-
             max-width: 800px;
         }
 
         .analysis-grid {
             margin-top: 30px;
-
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
             gap: 15px;
         }
 
         .analysis-box {
             padding: 25px;
-
             border: 1px solid #282e35;
-
             background: #0c0f13;
         }
 
         .analysis-box strong {
             display: block;
-
             font-size: 14px;
-
             margin-bottom: 7px;
         }
 
         .analysis-box span {
             color: #858d96;
-
             font-size: 13px;
         }
 
-        /* =========================
-           ACHIEVEMENTS
-        ========================= */
+        /* ========== ACHIEVEMENTS ========== */
 
         .achievement-list {
             display: grid;
-
             grid-template-columns: repeat(3, 1fr);
-
             gap: 20px;
         }
 
         .achievement {
             padding: 30px;
-
             border: 1px solid #252a30;
-
             background: #101318;
         }
 
         .achievement h3 {
             font-size: 20px;
-
             margin-bottom: 10px;
         }
 
         .achievement p {
             color: #8e959d;
-
             font-size: 14px;
         }
 
-        /* =========================
-           RESEARCH
-        ========================= */
+        /* ========== RESEARCH ========== */
 
         .research-card {
             padding: 40px;
-
             border: 1px solid #282e35;
-
             background: #101318;
         }
 
         .research-card h3 {
             font-size: 26px;
-
             margin-bottom: 15px;
         }
 
         .research-card p {
             color: #9198a0;
-
             max-width: 850px;
-
             margin-bottom: 15px;
         }
 
-        /* =========================
-           CONTACT
-        ========================= */
+        /* ========== CONTACT ========== */
 
         .contact {
             text-align: center;
@@ -534,44 +413,30 @@
 
         .contact p {
             max-width: 650px;
-
             margin: 0 auto 30px;
-
             color: #8f969e;
         }
 
         .contact-links {
             display: flex;
-
             justify-content: center;
-
             gap: 15px;
-
             flex-wrap: wrap;
         }
 
-        /* =========================
-           FOOTER
-        ========================= */
+        /* ========== FOOTER ========== */
 
         footer {
             padding: 40px 0;
-
             border-top: 1px solid #20242a;
-
             text-align: center;
-
             color: #656d76;
-
             font-size: 13px;
         }
 
-        /* =========================
-           RESPONSIVE
-        ========================= */
+        /* ========== RESPONSIVE ========== */
 
         @media (max-width: 900px) {
-
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -587,11 +452,9 @@
             .analysis-grid {
                 grid-template-columns: 1fr;
             }
-
         }
 
         @media (max-width: 700px) {
-
             .nav-links {
                 display: none;
             }
@@ -611,865 +474,364 @@
             .project-image {
                 height: 250px;
             }
-
         }
-
     </style>
 </head>
-
 <body>
 
-<!-- =========================
-     NAVIGATION
-========================= -->
-
-<nav>
-
-    <div class="nav-container">
-
-        <a href="#home" class="logo">
-            AWS
-        </a>
-
-        <ul class="nav-links">
-
-            <li>
-                <a href="#about">About</a>
-            </li>
-
-            <li>
-                <a href="#skills">Skills</a>
-            </li>
-
-            <li>
-                <a href="#projects">Projects</a>
-            </li>
-
-            <li>
-                <a href="#achievements">Achievements</a>
-            </li>
-
-            <li>
-                <a href="#research">Research</a>
-            </li>
-
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-
-        </ul>
-
-    </div>
-
-</nav>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero" id="home">
-
-    <div class="container">
-
-        <div class="hero-content">
-
-            <div class="hero-label">
-                Mechanical Engineering Portfolio
-            </div>
-
-            <h1>
-                ABDUL WAHID<br>
-                SIBLY
-            </h1>
-
-            <h2>
-                Mechanical Design Engineer
-            </h2>
-
-            <p class="hero-description">
-                CAD Design • Product Development • FEA • CFD •
-                Motorsport Engineering
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#projects" class="button primary">
-                    View Projects
-                </a>
-
-                <a href="#contact" class="button">
-                    Contact Me
-                </a>
-
-            </div>
-
+    <!-- ========== NAVIGATION ========== -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">AWS</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </div>
+    </nav>
 
-    </div>
-
-</section>
-
-
-<!-- =========================
-     ABOUT
-========================= -->
-
-<section id="about">
-
-    <div class="container">
-
-        <div class="section-label">
-            01 — About
-        </div>
-
-        <h2>
-            Engineering with purpose.
-        </h2>
-
-        <div class="about-grid">
-
-            <div class="about-text">
-
-                <p>
-                    I am a Mechanical Engineering graduate from
-                    Military Institute of Science and Technology
-                    (MIST), Bangladesh, with a strong interest in
-                    mechanical design, product development,
-                    simulation and engineering innovation.
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">Mechanical Engineering Portfolio</div>
+                <h1>ABDUL WAHID<br>SIBLY</h1>
+                <h2>Mechanical Design Engineer</h2>
+                <p class="hero-description">
+                    CAD Design • Product Development • FEA • CFD • Motorsport Engineering
                 </p>
-
-                <p>
-                    My experience includes CAD design, structural
-                    analysis, motorsport engineering, fabrication
-                    planning and industrial machinery maintenance.
-                </p>
-
-                <p>
-                    I enjoy turning engineering concepts into
-                    practical, manufacturable and performance-focused
-                    designs.
-                </p>
-
-            </div>
-
-            <div class="education">
-
-                <h3>
-                    B.Sc. in Mechanical Engineering
-                </h3>
-
-                <p>
-                    Military Institute of Science and Technology
-                    (MIST)
-                </p>
-
-                <p>
-                    2026 • CGPA 3.27
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     SKILLS
-========================= -->
-
-<section id="skills">
-
-    <div class="container">
-
-        <div class="section-label">
-            02 — Technical Skills
-        </div>
-
-        <h2>
-            What I work with.
-        </h2>
-
-        <p class="section-description">
-            A practical engineering toolkit covering CAD,
-            simulation, manufacturing and product development.
-        </p>
-
-
-        <div class="skills-grid">
-
-            <div class="skill-card">
-
-                <h3>
-                    CAD & Design
-                </h3>
-
-                <ul>
-
-                    <li>SolidWorks</li>
-                    <li>Assembly Design</li>
-                    <li>Weldments</li>
-                    <li>Engineering Drawings</li>
-                    <li>BOM & Documentation</li>
-
-                </ul>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <h3>
-                    FEA & Structural
-                </h3>
-
-                <ul>
-
-                    <li>ANSYS Workbench</li>
-                    <li>Static Structural</li>
-                    <li>Stress Analysis</li>
-                    <li>Deformation Analysis</li>
-                    <li>Factor of Safety</li>
-
-                </ul>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <h3>
-                    CFD & Simulation
-                </h3>
-
-                <ul>
-
-                    <li>ANSYS Fluent</li>
-                    <li>Laminar Flow</li>
-                    <li>Velocity Analysis</li>
-                    <li>Pressure Distribution</li>
-                    <li>Grid Independence</li>
-
-                </ul>
-
-            </div>
-
-
-            <div class="skill-card">
-
-                <h3>
-                    Manufacturing
-                </h3>
-
-                <ul>
-
-                    <li>DFM</li>
-                    <li>Welding & Fabrication</li>
-                    <li>Tolerances</li>
-                    <li>Assembly Planning</li>
-                    <li>Material Selection</li>
-
-                </ul>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     PROJECTS
-========================= -->
-
-<section id="projects">
-
-    <div class="container">
-
-        <div class="section-label">
-            03 — Selected Projects
-        </div>
-
-        <h2>
-            Engineering projects.
-        </h2>
-
-        <p class="section-description">
-            Selected work covering motorsport engineering,
-            mechanical CAD, product design, simulation and
-            fabrication.
-        </p>
-
-
-        <div class="projects-grid">
-
-
-            <!-- PROJECT 01 -->
-
-            <div class="project-card">
-
-                <div class="project-image placeholder">
-
-                    Formula Student Chassis
-
+                <div class="hero-buttons">
+                    <a href="#projects" class="button primary">View Projects</a>
+                    <a href="#contact" class="button">Contact Me</a>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <div class="project-content">
+    <!-- ========== ABOUT ========== -->
+    <section id="about">
+        <div class="container">
+            <div class="section-label">01 — About</div>
+            <h2>Engineering with purpose.</h2>
 
-                    <div class="project-number">
-                        PROJECT 01
-                    </div>
-
-                    <h3>
-                        Formula Student Racing Chassis Design
-                    </h3>
-
+            <div class="about-grid">
+                <div class="about-text">
                     <p>
-                        Designed and developed a Formula Student
-                        racing chassis with focus on structural
-                        stiffness, weight optimization,
-                        suspension mounting and manufacturability.
+                        I am a Mechanical Engineering graduate from Military Institute of Science and
+                        Technology (MIST), Bangladesh, with a strong interest in mechanical design,
+                        product development, simulation and engineering innovation.
                     </p>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            SolidWorks
-                        </span>
-
-                        <span class="tag">
-                            ANSYS
-                        </span>
-
-                        <span class="tag">
-                            FEA
-                        </span>
-
-                        <span class="tag">
-                            Motorsport
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PROJECT 02 -->
-
-            <div class="project-card">
-
-                <div class="project-image">
-
-                    <img
-                        src="images/radial-engine.png"
-                        alt="Radial Engine CAD Design"
-                    >
-
-                </div>
-
-                <div class="project-content">
-
-                    <div class="project-number">
-                        PROJECT 02
-                    </div>
-
-                    <h3>
-                        Radial Engine CAD Design & Assembly
-                    </h3>
-
                     <p>
-                        Designed individual engine components
-                        and developed a fully constrained radial
-                        engine assembly in SolidWorks, including
-                        engineering drawings and fit/interference
-                        checks.
+                        My experience includes CAD design, structural analysis, motorsport engineering,
+                        fabrication planning and industrial machinery maintenance.
                     </p>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            SolidWorks
-                        </span>
-
-                        <span class="tag">
-                            CAD
-                        </span>
-
-                        <span class="tag">
-                            Assembly
-                        </span>
-
-                        <span class="tag">
-                            Engineering Drawing
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PROJECT 03 -->
-
-            <div class="project-card">
-
-                <div class="project-image placeholder">
-
-                    F1 Car from Scrap
-
-                </div>
-
-                <div class="project-content">
-
-                    <div class="project-number">
-                        PROJECT 03
-                    </div>
-
-                    <h3>
-                        F1 Car from Scrap
-                    </h3>
-
                     <p>
-                        Developed a miniature F1-inspired vehicle
-                        using recycled engine components with
-                        CAD, fabrication planning, welding,
-                        laser cutting and machining.
+                        I enjoy turning engineering concepts into practical, manufacturable and
+                        performance-focused designs.
                     </p>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            CAD
-                        </span>
-
-                        <span class="tag">
-                            Fabrication
-                        </span>
-
-                        <span class="tag">
-                            Welding
-                        </span>
-
-                        <span class="tag">
-                            Machining
-                        </span>
-
-                    </div>
-
                 </div>
 
+                <div class="education">
+                    <h3>B.Sc. in Mechanical Engineering</h3>
+                    <p>Military Institute of Science and Technology (MIST)</p>
+                    <p>2026 • CGPA 3.27</p>
+                </div>
             </div>
-
-
-            <!-- PROJECT 04 -->
-
-            <div class="project-card">
-
-                <div class="project-image placeholder">
-
-                    Folding Drone Frame
-
-                </div>
-
-                <div class="project-content">
-
-                    <div class="project-number">
-                        PROJECT 04
-                    </div>
-
-                    <h3>
-                        Folding Drone Frame Design
-                    </h3>
-
-                    <p>
-                        Designed a lightweight folding drone frame
-                        with focus on folding-arm architecture,
-                        component mounting, manufacturability and
-                        assembly.
-                    </p>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            SolidWorks
-                        </span>
-
-                        <span class="tag">
-                            Product Design
-                        </span>
-
-                        <span class="tag">
-                            3D Printing
-                        </span>
-
-                        <span class="tag">
-                            DFM
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- PROJECT 05 -->
-
-            <div class="project-card">
-
-                <div class="project-image placeholder">
-
-                    ANSYS Fluent Pipe Flow
-
-                </div>
-
-                <div class="project-content">
-
-                    <div class="project-number">
-                        PROJECT 05
-                    </div>
-
-                    <h3>
-                        Laminar Flow Analysis in a Circular Pipe
-                    </h3>
-
-                    <p>
-                        Numerical investigation of laminar pipe flow
-                        using ANSYS Fluent with analytical comparison,
-                        mesh independence, velocity and pressure
-                        distribution analysis and validation.
-                    </p>
-
-                    <div class="tags">
-
-                        <span class="tag">
-                            ANSYS Fluent
-                        </span>
-
-                        <span class="tag">
-                            CFD
-                        </span>
-
-                        <span class="tag">
-                            Laminar Flow
-                        </span>
-
-                        <span class="tag">
-                            Validation
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
         </div>
+    </section>
 
-
-        <!-- FEATURED ANALYSIS -->
-
-        <div class="featured">
-
-            <div class="section-label">
-                Featured Analysis
-            </div>
-
-            <h3>
-                Formula Student Chassis Structural Analysis
-            </h3>
-
-            <p>
-                Structural evaluation of the Formula Student
-                chassis using ANSYS, including deformation,
-                stress, factor of safety and load-response
-                analysis.
+    <!-- ========== SKILLS ========== -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-label">02 — Technical Skills</div>
+            <h2>What I work with.</h2>
+            <p class="section-description">
+                A practical engineering toolkit covering CAD, simulation, manufacturing and product development.
             </p>
 
-            <div class="analysis-grid">
-
-                <div class="analysis-box">
-
-                    <strong>
-                        Factor of Safety
-                    </strong>
-
-                    <span>
-                        Structural safety evaluation
-                    </span>
-
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>CAD & Design</h3>
+                    <ul>
+                        <li>SolidWorks</li>
+                        <li>Assembly Design</li>
+                        <li>Weldments</li>
+                        <li>Engineering Drawings</li>
+                        <li>BOM & Documentation</li>
+                    </ul>
                 </div>
 
-
-                <div class="analysis-box">
-
-                    <strong>
-                        Total Deformation
-                    </strong>
-
-                    <span>
-                        Chassis displacement analysis
-                    </span>
-
+                <div class="skill-card">
+                    <h3>FEA & Structural</h3>
+                    <ul>
+                        <li>ANSYS Workbench</li>
+                        <li>Static Structural</li>
+                        <li>Stress Analysis</li>
+                        <li>Deformation Analysis</li>
+                        <li>Factor of Safety</li>
+                    </ul>
                 </div>
 
+                <div class="skill-card">
+                    <h3>CFD & Simulation</h3>
+                    <ul>
+                        <li>ANSYS Fluent</li>
+                        <li>Laminar Flow</li>
+                        <li>Velocity Analysis</li>
+                        <li>Pressure Distribution</li>
+                        <li>Grid Independence</li>
+                    </ul>
+                </div>
 
-                <div class="analysis-box">
+                <div class="skill-card">
+                    <h3>Manufacturing</h3>
+                    <ul>
+                        <li>DFM</li>
+                        <li>Welding & Fabrication</li>
+                        <li>Tolerances</li>
+                        <li>Assembly Planning</li>
+                        <li>Material Selection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                    <strong>
-                        Stress Analysis
-                    </strong>
+    <!-- ========== PROJECTS ========== -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-label">03 — Selected Projects</div>
+            <h2>Engineering projects.</h2>
+            <p class="section-description">
+                Selected work covering motorsport engineering, mechanical CAD, product design,
+                simulation and fabrication.
+            </p>
 
-                    <span>
-                        Structural stress and load response
-                    </span>
+            <div class="projects-grid">
 
+                <!-- PROJECT 01 -->
+                <div class="project-card">
+                    <div class="project-image placeholder">Formula Student Chassis</div>
+                    <div class="project-content">
+                        <div class="project-number">PROJECT 01</div>
+                        <h3>Formula Student Racing Chassis Design</h3>
+                        <p>
+                            Designed and developed a Formula Student racing chassis with focus on
+                            structural stiffness, weight optimization, suspension mounting and
+                            manufacturability.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">ANSYS</span>
+                            <span class="tag">FEA</span>
+                            <span class="tag">Motorsport</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 02 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/radial-engine.png" alt="Radial Engine CAD Design">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-number">PROJECT 02</div>
+                        <h3>Radial Engine CAD Design & Assembly</h3>
+                        <p>
+                            Designed individual engine components and developed a fully constrained
+                            radial engine assembly in SolidWorks, including engineering drawings and
+                            fit/interference checks.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">CAD</span>
+                            <span class="tag">Assembly</span>
+                            <span class="tag">Engineering Drawing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 03 -->
+                <div class="project-card">
+                    <div class="project-image placeholder">F1 Car from Scrap</div>
+                    <div class="project-content">
+                        <div class="project-number">PROJECT 03</div>
+                        <h3>F1 Car from Scrap</h3>
+                        <p>
+                            Developed a miniature F1-inspired vehicle using recycled engine components
+                            with CAD, fabrication planning, welding, laser cutting and machining.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">CAD</span>
+                            <span class="tag">Fabrication</span>
+                            <span class="tag">Welding</span>
+                            <span class="tag">Machining</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 04 -->
+                <div class="project-card">
+                    <div class="project-image placeholder">Folding Drone Frame</div>
+                    <div class="project-content">
+                        <div class="project-number">PROJECT 04</div>
+                        <h3>Folding Drone Frame Design</h3>
+                        <p>
+                            Designed a lightweight folding drone frame with focus on folding-arm
+                            architecture, component mounting, manufacturability and assembly.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">Product Design</span>
+                            <span class="tag">3D Printing</span>
+                            <span class="tag">DFM</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PROJECT 05 -->
+                <div class="project-card">
+                    <div class="project-image placeholder">ANSYS Fluent Pipe Flow</div>
+                    <div class="project-content">
+                        <div class="project-number">PROJECT 05</div>
+                        <h3>Laminar Flow Analysis in a Circular Pipe</h3>
+                        <p>
+                            Numerical investigation of laminar pipe flow using ANSYS Fluent with
+                            analytical comparison, mesh independence, velocity and pressure
+                            distribution analysis and validation.
+                        </p>
+                        <div class="tags">
+                            <span class="tag">ANSYS Fluent</span>
+                            <span class="tag">CFD</span>
+                            <span class="tag">Laminar Flow</span>
+                            <span class="tag">Validation</span>
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     ACHIEVEMENTS
-========================= -->
-
-<section id="achievements">
-
-    <div class="container">
-
-        <div class="section-label">
-            04 — Achievements
-        </div>
-
-        <h2>
-            Beyond the classroom.
-        </h2>
-
-
-        <div class="achievement-list">
-
-
-            <div class="achievement">
-
-                <h3>
-                    Senior Engineer
-                </h3>
-
+            <!-- FEATURED ANALYSIS -->
+            <div class="featured">
+                <div class="section-label">Featured Analysis</div>
+                <h3>Formula Student Chassis Structural Analysis</h3>
                 <p>
-                    MIST Blitz Formula Student Team
+                    Structural evaluation of the Formula Student chassis using ANSYS, including
+                    deformation, stress, factor of safety and load-response analysis.
                 </p>
 
+                <div class="analysis-grid">
+                    <div class="analysis-box">
+                        <strong>Factor of Safety</strong>
+                        <span>Structural safety evaluation</span>
+                    </div>
+
+                    <div class="analysis-box">
+                        <strong>Total Deformation</strong>
+                        <span>Chassis displacement analysis</span>
+                    </div>
+
+                    <div class="analysis-box">
+                        <strong>Stress Analysis</strong>
+                        <span>Structural stress and load response</span>
+                    </div>
+                </div>
             </div>
+        </div>
+    </section>
 
+    <!-- ========== ACHIEVEMENTS ========== -->
+    <section id="achievements">
+        <div class="container">
+            <div class="section-label">04 — Achievements</div>
+            <h2>Beyond the classroom.</h2>
 
-            <div class="achievement">
+            <div class="achievement-list">
+                <div class="achievement">
+                    <h3>Senior Engineer</h3>
+                    <p>MIST Blitz Formula Student Team</p>
+                </div>
 
-                <h3>
-                    Best Foreign Team Award
-                </h3>
+                <div class="achievement">
+                    <h3>Best Foreign Team Award</h3>
+                    <p>Formula Student competition</p>
+                </div>
 
+                <div class="achievement">
+                    <h3>Best Presentation Performance</h3>
+                    <p>Static Event</p>
+                </div>
+
+                <div class="achievement">
+                    <h3>4th Place</h3>
+                    <p>Business Plan Presentation — Formula Student Combustion China 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== RESEARCH ========== -->
+    <section id="research">
+        <div class="container">
+            <div class="section-label">05 — Research</div>
+            <h2>Research & technical work.</h2>
+
+            <div class="research-card">
+                <h3>Eco-Friendly Ecobricks for Sustainable Waste Management</h3>
                 <p>
-                    Formula Student competition
+                    Published research focused on sustainable waste management and the development
+                    of eco-friendly ecobrick solutions.
                 </p>
-
+                <p>ICMEAS 2025</p>
             </div>
 
+            <br><br>
 
-            <div class="achievement">
-
-                <h3>
-                    Best Presentation Performance
-                </h3>
-
+            <div class="research-card">
+                <h3>Laminar Flow Analysis in a Circular Pipe</h3>
                 <p>
-                    Static Event
+                    Engineering simulation study using ANSYS Fluent to investigate laminar flow
+                    behavior and compare numerical results with analytical solutions.
                 </p>
+                <p>MIST ME 368 — Engineering Simulation Sessional</p>
+            </div>
+        </div>
+    </section>
 
+    <!-- ========== CONTACT ========== -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-label">06 — Contact</div>
+            <h2>Let's build something.</h2>
+            <p>
+                Interested in mechanical design, product development, CAD engineering, simulation
+                and motorsport engineering.
+            </p>
+
+            <div class="contact-links">
+                <a href="mailto:siblynoman05@gmail.com" class="button primary">Email Me</a>
+                <a href="https://www.linkedin.com/in/awsibly971/" class="button" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/abdulwahidsibly" class="button" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
 
-
-            <div class="achievement">
-
-                <h3>
-                    4th Place
-                </h3>
-
-                <p>
-                    Business Plan Presentation —
-                    Formula Student Combustion China 2025
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     RESEARCH
-========================= -->
-
-<section id="research">
-
-    <div class="container">
-
-        <div class="section-label">
-            05 — Research
-        </div>
-
-        <h2>
-            Research & technical work.
-        </h2>
-
-
-        <div class="research-card">
-
-            <h3>
-                Eco-Friendly Ecobricks for Sustainable Waste Management
-            </h3>
-
-            <p>
-                Published research focused on sustainable waste
-                management and the development of eco-friendly
-                ecobrick solutions.
+            <p style="margin-top: 30px;">
+                siblynoman05@gmail.com
+                <br>
+                linkedin.com/in/awsibly971/
             </p>
-
-            <p>
-                ICMEAS 2025
-            </p>
-
         </div>
+    </section>
 
-
-        <br><br>
-
-
-        <div class="research-card">
-
-            <h3>
-                Laminar Flow Analysis in a Circular Pipe
-            </h3>
-
-            <p>
-                Engineering simulation study using ANSYS Fluent
-                to investigate laminar flow behavior and compare
-                numerical results with analytical solutions.
-            </p>
-
-            <p>
-                MIST ME 368 — Engineering Simulation Sessional
-            </p>
-
+    <!-- ========== FOOTER ========== -->
+    <footer>
+        <div class="container">
+            © 2026 Abdul Wahid Sibly. Mechanical Design Engineer.
         </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     CONTACT
-========================= -->
-
-<section class="contact" id="contact">
-
-    <div class="container">
-
-        <div class="section-label">
-            06 — Contact
-        </div>
-
-        <h2>
-            Let's build something.
-        </h2>
-
-        <p>
-            Interested in mechanical design, product development,
-            CAD engineering, simulation and motorsport engineering.
-        </p>
-
-
-        <div class="contact-links">
-
-            <a
-                href="mailto:siblynoman05@gmail.com"
-                class="button primary"
-            >
-                Email Me
-            </a>
-
-
-            <a
-                href="https://www.linkedin.com/in/awsibly971/"
-                class="button"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                LinkedIn
-            </a>
-
-
-            <a
-                href="https://github.com/abdulwahidsibly"
-                class="button"
-                target="_blank"
-                rel="noopener noreferrer"
-            >
-                GitHub
-            </a>
-
-        </div>
-
-
-        <p style="margin-top: 30px;">
-
-            siblynoman05@gmail.com
-
-            <br>
-
-            linkedin.com/in/awsibly971/
-
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-    <div class="container">
-
-        © 2026 Abdul Wahid Sibly.
-        Mechanical Design Engineer.
-
-    </div>
-
-</footer>
-
+    </footer>
 
 </body>
 </html>
