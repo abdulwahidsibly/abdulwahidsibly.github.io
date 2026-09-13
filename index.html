@@ -261,76 +261,76 @@
             border-color: #444b53;
         }
 
-.project-image {
-    width: 100%;
-    height: 300px;
-    background: #171b20;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-}
+        .project-image {
+            width: 100%;
+            height: 300px;
+            background: #171b20;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
 
-.project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: none;
-}
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: none;
+        }
 
-.project-image img.active {
-    display: block;
-}
+        .project-image img.active {
+            display: block;
+        }
 
-/* Gallery Navigation Buttons */
+        /* Gallery Navigation Buttons */
 
-.gallery-prev,
-.gallery-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    border: 1px solid #555c64;
-    background: rgba(11, 13, 16, 0.75);
-    color: #ffffff;
-    font-size: 22px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s;
-    z-index: 5;
-}
+        .gallery-prev,
+        .gallery-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border: 1px solid #555c64;
+            background: rgba(11, 13, 16, 0.75);
+            color: #ffffff;
+            font-size: 22px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+            z-index: 5;
+        }
 
-.gallery-prev {
-    left: 12px;
-}
+        .gallery-prev {
+            left: 12px;
+        }
 
-.gallery-next {
-    right: 12px;
-}
+        .gallery-next {
+            right: 12px;
+        }
 
-.gallery-prev:hover,
-.gallery-next:hover {
-    background: #ffffff;
-    color: #0b0d10;
-}
+        .gallery-prev:hover,
+        .gallery-next:hover {
+            background: #ffffff;
+            color: #0b0d10;
+        }
 
-/* Image Counter */
+        /* Image Counter */
 
-.gallery-counter {
-    position: absolute;
-    bottom: 12px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(11, 13, 16, 0.75);
-    color: #ffffff;
-    padding: 4px 10px;
-    font-size: 12px;
-    z-index: 5;
-}
+        .gallery-counter {
+            position: absolute;
+            bottom: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(11, 13, 16, 0.75);
+            color: #ffffff;
+            padding: 4px 10px;
+            font-size: 12px;
+            z-index: 5;
+        }
 
         .project-image.placeholder {
             color: #646b73;
@@ -440,6 +440,74 @@
             font-size: 14px;
         }
 
+        /* ========== EXPERIENCE ========== */
+
+        .experience-card {
+            padding: 40px;
+            border: 1px solid #282e35;
+            background: #101318;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .experience-header h3 {
+            font-size: 26px;
+        }
+
+        .experience-duration {
+            color: #777f88;
+            font-size: 13px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .experience-card p {
+            color: #9198a0;
+            max-width: 850px;
+            margin-bottom: 18px;
+        }
+
+        .experience-columns {
+            margin-top: 25px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .experience-column h4 {
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #b8bec5;
+            margin-bottom: 14px;
+        }
+
+        .experience-column ul {
+            list-style: none;
+            color: #8e959d;
+            font-size: 14px;
+        }
+
+        .experience-column li {
+            margin-bottom: 10px;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .experience-column li::before {
+            content: "—";
+            position: absolute;
+            left: 0;
+            color: #555c64;
+        }
+
         /* ========== RESEARCH ========== */
 
         .research-card {
@@ -506,6 +574,10 @@
             .analysis-grid {
                 grid-template-columns: 1fr;
             }
+
+            .experience-columns {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 700px) {
@@ -542,6 +614,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#experience">Experience</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -687,53 +760,53 @@
                 </div>
 
                 <!-- PROJECT 02 -->
-<div class="project-card">
-    <div class="project-image">
-        <img src="images/radial-engine.png"
-             alt="Radial Engine CAD Design"
-             class="active">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="images/radial-engine.png"
+                             alt="Radial Engine CAD Design"
+                             class="active">
 
-        <img src="images/Front.png"
-             alt="Radial Engine CAD Design - Front View">
-        <img src="images/Top.png"
-             alt="Radial Engine CAD Design - Top View">
-        <img src="images/Right.png"
-             alt="Radial Engine CAD Design - Side View">
+                        <img src="images/Front.png"
+                             alt="Radial Engine CAD Design - Front View">
+                        <img src="images/Top.png"
+                             alt="Radial Engine CAD Design - Top View">
+                        <img src="images/Right.png"
+                             alt="Radial Engine CAD Design - Side View">
 
-        <button class="gallery-prev"
-                onclick="changeImage(this, -1)"
-                aria-label="Previous image">
-            &#10094;
-        </button>
+                        <button class="gallery-prev"
+                                onclick="changeImage(this, -1)"
+                                aria-label="Previous image">
+                            &#10094;
+                        </button>
 
-        <button class="gallery-next"
-                onclick="changeImage(this, 1)"
-                aria-label="Next image">
-            &#10095;
-        </button>
+                        <button class="gallery-next"
+                                onclick="changeImage(this, 1)"
+                                aria-label="Next image">
+                            &#10095;
+                        </button>
 
-        <div class="gallery-counter">1 / 2</div>
-    </div>
+                        <div class="gallery-counter">1 / 4</div>
+                    </div>
 
-    <div class="project-content">
-        <div class="project-number">PROJECT 02</div>
+                    <div class="project-content">
+                        <div class="project-number">PROJECT 02</div>
 
-        <h3>Radial Engine CAD Design & Assembly</h3>
+                        <h3>Radial Engine CAD Design & Assembly</h3>
 
-        <p>
-            Designed individual engine components and developed a fully constrained
-            radial engine assembly in SolidWorks, including engineering drawings and
-            fit/interference checks.
-        </p>
+                        <p>
+                            Designed individual engine components and developed a fully constrained
+                            radial engine assembly in SolidWorks, including engineering drawings and
+                            fit/interference checks.
+                        </p>
 
-        <div class="tags">
-            <span class="tag">SolidWorks</span>
-            <span class="tag">CAD</span>
-            <span class="tag">Assembly</span>
-            <span class="tag">Engineering Drawing</span>
-        </div>
-    </div>
-</div>
+                        <div class="tags">
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">CAD</span>
+                            <span class="tag">Assembly</span>
+                            <span class="tag">Engineering Drawing</span>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- PROJECT 03 -->
                 <div class="project-card">
@@ -854,10 +927,68 @@
         </div>
     </section>
 
+    <!-- ========== EXPERIENCE ========== -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-label">05 — Experience</div>
+            <h2>Where I've worked.</h2>
+
+            <div class="experience-card">
+                <div class="experience-header">
+                    <h3>Senior Engineer — MIST Blitz Formula SAE Team</h3>
+                    <div class="experience-duration">April 2024 – August 2026</div>
+                </div>
+
+                <p>
+                    Served as a member of the Chassis and Aerodynamics, Logistics Operations, and
+                    Finance teams within MIST Blitz Formula SAE, the university's Formula Student
+                    program. Designed the team's first Formula Student spaceframe chassis and
+                    validated its structural integrity through SolidWorks modeling and ANSYS
+                    simulation, iterating on the design to optimize stiffness-to-weight performance.
+                    Supervised fabrication to ensure dimensional accuracy and full compliance with
+                    Formula Student regulations, and verified critical safety systems including the
+                    headrest and mounting assembly.
+                </p>
+
+                <div class="experience-columns">
+                    <div class="experience-column">
+                        <h4>Technical</h4>
+                        <ul>
+                            <li>Designed the team's first spaceframe chassis</li>
+                            <li>Validated structural integrity in SolidWorks and ANSYS</li>
+                            <li>Optimized design through simulation and testing</li>
+                            <li>Supervised fabrication and rule compliance</li>
+                            <li>Verified headrest and mounting safety systems</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-column">
+                        <h4>Finance</h4>
+                        <ul>
+                            <li>Managed the chassis budget</li>
+                            <li>Monitored expenditures</li>
+                            <li>Coordinated material procurement</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-column">
+                        <h4>Logistics</h4>
+                        <ul>
+                            <li>Procured tools and workshop equipment</li>
+                            <li>Coordinated component weighing and packaging</li>
+                            <li>Optimized crate dimensions for airline cargo rules</li>
+                            <li>Ensured transport for international competition</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ========== RESEARCH ========== -->
     <section id="research">
         <div class="container">
-            <div class="section-label">05 — Research</div>
+            <div class="section-label">06 — Research</div>
             <h2>Research & technical work.</h2>
 
             <div class="research-card">
@@ -885,7 +1016,7 @@
     <!-- ========== CONTACT ========== -->
     <section class="contact" id="contact">
         <div class="container">
-            <div class="section-label">06 — Contact</div>
+            <div class="section-label">07 — Contact</div>
             <h2>Let's build something.</h2>
             <p>
                 Interested in mechanical design, product development, CAD engineering, simulation
@@ -907,7 +1038,7 @@
     </section>
 
     <!-- ========== FOOTER ========== -->
-       <footer>
+    <footer>
         <div class="container">
             © 2026 Abdul Wahid Sibly. Mechanical Design Engineer.
         </div>
