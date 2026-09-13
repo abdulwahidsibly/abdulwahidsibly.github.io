@@ -449,14 +449,15 @@
         ========================================================= */
 
         .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
             gap: 1px;
             background: var(--line);
             border: 1px solid var(--line);
         }
 
         .skill-card {
+            flex: 1 1 300px;
             background: var(--panel);
             padding: 28px 26px;
             border-left: 2px solid transparent;
@@ -781,14 +782,15 @@
         ========================================================= */
 
         .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            display: flex;
+            flex-wrap: wrap;
             gap: 1px;
             background: var(--line);
             border: 1px solid var(--line);
         }
 
         .achievement-card {
+            flex: 1 1 260px;
             border-left: 2px solid var(--copper);
 
             padding: 24px 24px 24px 22px;
@@ -1193,9 +1195,12 @@
                 gap: 34px;
             }
 
-            .skills-grid,
-            .achievements-grid {
-                grid-template-columns: 1fr 1fr;
+            .skill-card {
+                flex-basis: 46%;
+            }
+
+            .achievement-card {
+                flex-basis: 46%;
             }
 
             .projects-grid,
@@ -1241,9 +1246,9 @@
                 grid-template-columns: 1fr 1fr;
             }
 
-            .skills-grid,
-            .achievements-grid {
-                grid-template-columns: 1fr;
+            .skill-card,
+            .achievement-card {
+                flex-basis: 100%;
             }
 
             .project-image {
@@ -1686,7 +1691,7 @@
                         </button>
 
                         <div class="gallery-counter">
-                            1 / 16
+                            1 / 15
                         </div>
 
                     </div>
