@@ -104,6 +104,76 @@
 
 
         /* =========================================================
+           FEATURED ACHIEVEMENT / PRESS FEATURE
+        ========================================================= */
+
+        .featured-achievement {
+            margin: 22px 0 20px;
+            padding: 16px 18px;
+
+            border-left: 2px solid var(--copper);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+
+            background: rgba(217, 122, 70, 0.04);
+        }
+
+        .featured-achievement-label {
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            color: var(--copper);
+
+            margin-bottom: 8px;
+        }
+
+        .featured-achievement h4 {
+            font-family: var(--display);
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+
+            color: var(--paper);
+
+            margin-bottom: 10px;
+        }
+
+        .featured-achievement p {
+            color: var(--steel-dim);
+            font-size: 12.8px;
+
+            margin-bottom: 12px;
+        }
+
+        .featured-achievement a {
+            display: inline-block;
+
+            color: var(--blue);
+
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+
+            text-decoration: none;
+
+            border-bottom: 1px solid var(--blue-dim);
+
+            padding-bottom: 2px;
+
+            transition: 0.2s ease;
+        }
+
+        .featured-achievement a:hover,
+        .featured-achievement a:focus {
+            color: var(--paper);
+            border-color: var(--paper);
+        }
+
+
+        /* =========================================================
            DRAWING-SHEET FRAME UTILITY
            Corner registration marks, like crop marks on a
            technical drawing sheet.
@@ -507,6 +577,39 @@
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 26px;
+        }
+
+        /* Featured Project 01 */
+        .project-card:first-child {
+            grid-column: 1 / -1;
+        }
+
+        .project-card:first-child .project-image {
+            height: 380px;
+        }
+
+        .project-card:first-child .project-content {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            .project-card:first-child {
+                grid-column: auto;
+            }
+
+            .project-card:first-child .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card:first-child .project-image {
+                height: 280px;
+            }
+
         }
 
         .project-card {
@@ -1136,6 +1239,10 @@
             outline: none;
         }
 
+        .case-study-content .featured-achievement {
+            margin: 6px 0 18px;
+        }
+
 
         /* =========================================================
            FOOTER
@@ -1390,7 +1497,7 @@
                        class="hero-button"
                        target="_blank"
                        rel="noopener noreferrer">
-                        Download RESUME
+                        Download Resume
                     </a>
 
                     <a href="#projects"
@@ -1416,7 +1523,7 @@
 
                 <div class="title-block-field">
                     <dt>Discipline</dt>
-                    <dd>Mechanical Design</dd>
+                    <dd>Mechanical Engineering</dd>
                 </div>
 
                 <div class="title-block-field">
@@ -1624,7 +1731,7 @@
 
 
                 <!-- =================================================
-                     PROJECT 01
+                     PROJECT 01 — FEATURED
                 ================================================= -->
 
                 <div class="project-card dwg-frame">
@@ -1699,50 +1806,80 @@
 
                     <div class="project-content">
 
-                        <div class="project-number">
-                            Drawing No. 01
+                        <div class="project-primary">
+
+                            <div class="project-number">
+                                Drawing No. 01
+                            </div>
+
+                            <h3>
+                                Spaceframe Chassis Design
+                            </h3>
+
+                            <p>
+                                Designed the MIST Blitz Formula Student team's spaceframe chassis
+                                using SolidWorks Weldments, focusing on structural load paths,
+                                suspension mounting, driver ergonomics and fabrication feasibility.
+                                Structural integrity was evaluated using ANSYS, with design
+                                iterations aimed at improving stiffness-to-weight performance
+                                and manufacturability.
+                            </p>
+
+                            <div class="featured-achievement">
+
+                                <div class="featured-achievement-label">
+                                    Featured Achievement
+                                </div>
+
+                                <h4>
+                                    1st Place — Engineering Design, Formula Bharat 2025
+                                </h4>
+
+                                <p>
+                                    MIST Blitz Formula Student Team's Formula Bharat 2025
+                                    achievement was featured by The Daily Star.
+                                </p>
+
+                                <a href="https://www.thedailystar.net/campus/campus/news/mist-secures-first-place-formula-bharat-2025-engineering-design-crm-3712886"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+                                    Read the article →
+                                </a>
+
+                            </div>
+
                         </div>
 
-                        <h3>
-                            Spaceframe Chassis Design
-                        </h3>
+                        <div class="project-secondary">
 
-                        <p>
-                            Designed the MIST Blitz Formula Student team's spaceframe chassis
-                            using SolidWorks Weldments, focusing on structural load paths,
-                            suspension mounting, driver ergonomics and fabrication feasibility.
-                            Structural integrity was evaluated using ANSYS, with design
-                            iterations aimed at improving stiffness-to-weight performance
-                            and manufacturability.
-                        </p>
+                            <div class="project-meta">
+                                <span>Design</span>
+                                <span>FEA</span>
+                                <span>Fabrication</span>
+                                <span>Validation</span>
+                            </div>
 
 
-                        <div class="project-meta">
-                            <span>Design</span>
-                            <span>FEA</span>
-                            <span>Fabrication</span>
-                            <span>Validation</span>
-                        </div>
+                            <div class="tags">
+
+                                <span class="tag">SolidWorks</span>
+                                <span class="tag">Weldments</span>
+                                <span class="tag">ANSYS</span>
+                                <span class="tag">FEA</span>
+                                <span class="tag">Chassis Design</span>
+                                <span class="tag">Motorsport</span>
+
+                            </div>
 
 
-                        <div class="tags">
+                            <div class="project-actions">
 
-                            <span class="tag">SolidWorks</span>
-                            <span class="tag">Weldments</span>
-                            <span class="tag">ANSYS</span>
-                            <span class="tag">FEA</span>
-                            <span class="tag">Chassis Design</span>
-                            <span class="tag">Motorsport</span>
+                                <button class="project-button"
+                                        onclick="openCaseStudy('project1')">
+                                    View Case Study
+                                </button>
 
-                        </div>
-
-
-                        <div class="project-actions">
-
-                            <button class="project-button"
-                                    onclick="openCaseStudy('project1')">
-                                View Case Study
-                            </button>
+                            </div>
 
                         </div>
 
@@ -2182,6 +2319,19 @@
 
 
             <div class="achievements-grid">
+
+                <div class="achievement-card">
+
+                    <h3>
+                        1st Place — Engineering Design
+                    </h3>
+
+                    <p>
+                        Formula Bharat 2025 — MIST Blitz Formula Student Team.
+                        Featured by The Daily Star.
+                    </p>
+
+                </div>
 
 
                 <div class="achievement-card">
@@ -2636,7 +2786,10 @@
                 ],
 
                 focus:
-                    "CAD design, spaceframe architecture, structural analysis, manufacturability and motorsport engineering."
+                    "CAD design, spaceframe architecture, structural analysis, manufacturability and motorsport engineering.",
+
+                results:
+                    "The chassis helped MIST Blitz Formula Student Team place 1st in Engineering Design at Formula Bharat 2025 — an achievement featured by The Daily Star. Additional measured results (torsional stiffness, factor of safety, mass, max stress/displacement from ANSYS) can be added here once available."
 
             },
 
@@ -2659,7 +2812,10 @@
                 ],
 
                 focus:
-                    "Mechanical CAD, assembly design, engineering drawings and design verification."
+                    "Mechanical CAD, assembly design, engineering drawings and design verification.",
+
+                results:
+                    "This section can be expanded with measured results — number of unique parts/components, interference-check outcomes, and tolerance stack-up notes."
 
             },
 
@@ -2683,7 +2839,10 @@
                 ],
 
                 focus:
-                    "Product development, fabrication, machining, welding, prototyping and sustainable engineering."
+                    "Product development, fabrication, machining, welding, prototyping and sustainable engineering.",
+
+                results:
+                    "This section can be expanded with measured results — final weight, build time, cost, and any performance or test-run notes."
 
             },
 
@@ -2707,7 +2866,10 @@
                 ],
 
                 focus:
-                    "Product design, mechanism development, CAD modeling, prototyping and design validation."
+                    "Product design, mechanism development, CAD modeling, prototyping and design validation.",
+
+                results:
+                    "This section can be expanded with measured results — frame weight, fold/deploy time, print material, and any flight- or load-test results."
 
             },
 
@@ -2732,7 +2894,10 @@
                 ],
 
                 focus:
-                    "CFD, ANSYS Fluent, meshing, convergence, validation and fluid-flow analysis."
+                    "CFD, ANSYS Fluent, meshing, convergence, validation and fluid-flow analysis.",
+
+                results:
+                    "This section can be expanded with measured results — Reynolds number range tested, mesh element count at convergence, percent error vs. the analytical solution, and the entrance length result."
 
             }
 
@@ -2801,10 +2966,7 @@
                 </h4>
 
                 <p>
-                    This section can be expanded with your actual engineering
-                    results, such as mass reduction, stress, displacement,
-                    factor of safety, stiffness, flow error, pressure drop,
-                    prototype performance or other measured values.
+                    ${project.results}
                 </p>
 
             `;
