@@ -1048,62 +1048,44 @@
         }
 
 
-        /* =========================================================
-           CONTACT
-        ========================================================= */
+       /* =========================================================
+   CONTACT LINKS
+========================================================= */
 
-        .contact-grid {
-            display: grid;
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
 
-            grid-template-columns: 1fr 1fr;
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-            gap: 60px;
-        }
+    padding: 11px 18px;
 
-        .contact-intro {
-            color: var(--steel);
+    border: 1px solid var(--line-strong);
+    background: var(--panel);
 
-            max-width: 600px;
+    color: var(--paper);
 
-            font-size: 15.5px;
-        }
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 
-        .contact-links {
-            display: flex;
+    text-decoration: none;
 
-            flex-direction: column;
-        }
+    transition: all 0.2s ease;
+}
 
-        .contact-links a {
-            text-decoration: none;
-
-            color: var(--paper);
-
-            border-bottom: 1px solid var(--line);
-
-            padding: 16px 2px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-            font-size: 15px;
-
-            transition: 0.2s ease;
-        }
-
-        .contact-links a span.link-label {
-            color: var(--steel-dim);
-            font-family: var(--mono);
-            font-size: 11px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
-
-        .contact-links a:hover,
-        .contact-links a:focus {
-            color: var(--blue);
-            border-color: var(--blue);
-        }
+.contact-link:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+    background: var(--panel-2);
+}
 
 
         /* =========================================================
@@ -2636,39 +2618,33 @@
 
                 </p>
 
-<div class="contact-info">
+<div class="contact-links">
 
-    <div class="contact-item">
-        <span class="contact-label">Email</span>
-        <a href="mailto:siblynoman05@gmail.com">
-            siblynoman05@gmail.com
-        </a>
-    </div>
+    <a href="mailto:siblynoman05@gmail.com"
+       class="contact-link">
+        Email
+    </a>
 
-    <div class="contact-item">
-        <span class="contact-label">Phone</span>
-        <a href="tel:+8801873169474">
-            +8801873169474
-        </a>
-    </div>
+    <a href="tel:+8801873169474"
+       class="contact-link">
+        Phone
+    </a>
 
-    <div class="contact-item">
-        <span class="contact-label">LinkedIn</span>
-        <a href="https://www.linkedin.com/in/awsibly971/"
-           target="_blank"
-           rel="noopener noreferrer">
-            LinkedIn
-        </a>
-    </div>
+    <a href="https://www.linkedin.com/in/awsibly971/"
+       class="contact-link"
+       target="_blank"
+       rel="noopener noreferrer">
+        LinkedIn
+    </a>
 
-    <div class="contact-item">
-        <span class="contact-label">GitHub</span>
-        <a href="https://github.com/abdulwahidsibly"
-           target="_blank"
-           rel="noopener noreferrer">
-            GitHub
-        </a>
-    </div>
+    <a href="https://github.com/abdulwahidsibly"
+       class="contact-link"
+       target="_blank"
+       rel="noopener noreferrer">
+        GitHub
+    </a>
+
+</div>
 
 </div>
 
