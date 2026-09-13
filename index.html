@@ -601,6 +601,23 @@
                 height: 250px;
             }
         }
+          /* ========== PROJECT VIDEO BUTTON ========== */
+
+        .project-video {
+            display: inline-block;
+            margin-top: 18px;
+            padding: 9px 16px;
+            border: 1px solid #555c64;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .project-video:hover {
+            background: #ffffff;
+            color: #0b0d10;
+        }
     </style>
 </head>
 <body>
@@ -809,22 +826,37 @@
                 </div>
 
                 <!-- PROJECT 03 -->
-                <div class="project-card">
-                    <div class="project-image placeholder">F1 Car from Scrap</div>
-                    <div class="project-content">
-                        <div class="project-number">PROJECT 03</div>
-                        <h3>F1 Car from Scrap</h3>
-                        <p>
-                            Developed a miniature F1-inspired vehicle using recycled engine components
-                            with CAD, fabrication planning, welding, laser cutting and machining.
-                        </p>
-                        <div class="tags">
-                            <span class="tag">CAD</span>
-                            <span class="tag">Fabrication</span>
-                            <span class="tag">Welding</span>
-                            <span class="tag">Machining</span>
-                        </div>
-                    </div>
+            <div class="project-card">
+            
+                <div class="project-image">
+            
+                    <img src="Project03/scar-iso.png"
+                         alt="SCAR CAD Design - Isometric View"
+                         class="active">
+            
+                    <img src="Project03/scar-isop.png"
+                         alt="SCAR CAD Design - Alternate Isometric View">
+            
+                    <img src="Project03/scar-real.jpeg"
+                         alt="SCAR Physical Model">
+            
+                    <img src="Project03/scar-right.png"
+                         alt="SCAR CAD Design - Right View">
+            
+                    <button class="gallery-prev"
+                            onclick="changeImage(this, -1)"
+                            aria-label="Previous image">
+                        &#10094;
+                    </button>
+            
+                    <button class="gallery-next"
+                            onclick="changeImage(this, 1)"
+                            aria-label="Next image">
+                        &#10095;
+                    </button>
+            
+                    <div class="gallery-counter">1 / 4</div>
+            
                 </div>
 
                 <!-- PROJECT 04 -->
