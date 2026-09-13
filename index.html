@@ -18,11 +18,38 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://abdulwahidsibly.github.io/">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
     <style>
 
         /* =========================================================
-           GLOBAL
+           TOKENS
         ========================================================= */
+
+        :root {
+            --ink: #14171a;
+            --panel: #1a1e22;
+            --panel-2: #1f2429;
+
+            --line: #2a2f35;
+            --line-strong: #3c434b;
+
+            --paper: #ece8df;
+            --steel: #9aa1a8;
+            --steel-dim: #676e75;
+
+            --blue: #8dbbce;
+            --blue-dim: #5d818f;
+            --copper: #d97a46;
+
+            --sans: 'IBM Plex Sans', Arial, sans-serif;
+            --display: 'Archivo', 'IBM Plex Sans', Arial, sans-serif;
+            --mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+            --frame-len: 14px;
+        }
 
         * {
             margin: 0;
@@ -32,14 +59,15 @@
 
         html {
             scroll-behavior: smooth;
-            scroll-padding-top: 90px;
+            scroll-padding-top: 84px;
         }
 
         body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b0d10;
-            color: #ffffff;
+            font-family: var(--sans);
+            background: var(--ink);
+            color: var(--paper);
             line-height: 1.7;
+            font-size: 16px;
         }
 
         body.modal-open {
@@ -54,10 +82,57 @@
             font-family: inherit;
         }
 
+        img {
+            max-width: 100%;
+        }
+
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1180px;
             margin: auto;
+        }
+
+        ::selection {
+            background: var(--blue-dim);
+            color: var(--ink);
+        }
+
+        :focus-visible {
+            outline: 1px solid var(--blue);
+            outline-offset: 3px;
+        }
+
+
+        /* =========================================================
+           DRAWING-SHEET FRAME UTILITY
+           Corner registration marks, like crop marks on a
+           technical drawing sheet.
+        ========================================================= */
+
+        .dwg-frame {
+            position: relative;
+            background:
+                linear-gradient(var(--line-strong), var(--line-strong)) top left / var(--frame-len) 1px no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) top left / 1px var(--frame-len) no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) top right / var(--frame-len) 1px no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) top right / 1px var(--frame-len) no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) bottom left / var(--frame-len) 1px no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) bottom left / 1px var(--frame-len) no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) bottom right / var(--frame-len) 1px no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) bottom right / 1px var(--frame-len) no-repeat;
+        }
+
+        .sheet-tag {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: var(--blue);
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .sheet-tag span {
+            color: var(--steel-dim);
         }
 
 
@@ -69,27 +144,29 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(11, 13, 16, 0.96);
-            border-bottom: 1px solid #242930;
-            backdrop-filter: blur(10px);
+            background: rgba(20, 23, 26, 0.94);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(8px);
         }
 
         .nav-container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1180px;
             margin: auto;
 
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            min-height: 70px;
+            min-height: 66px;
         }
 
         .logo {
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-family: var(--mono);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            color: var(--blue);
             text-decoration: none;
         }
 
@@ -98,19 +175,22 @@
 
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 30px;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: #a0a6ad;
-            font-size: 13px;
-            transition: 0.3s ease;
+            color: var(--steel);
+            font-size: 13.5px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s ease, border-color 0.2s ease;
         }
 
         .nav-links a:hover,
         .nav-links a:focus {
-            color: #ffffff;
+            color: var(--paper);
+            border-color: var(--blue);
         }
 
 
@@ -119,50 +199,83 @@
         ========================================================= */
 
         #home {
-            min-height: 82vh;
-
-            display: flex;
-            align-items: center;
-
-            border-bottom: 1px solid #242930;
+            position: relative;
+            padding: 74px 0 0;
+            border-bottom: 1px solid var(--line);
+            overflow: hidden;
         }
 
-        .hero-content {
-            max-width: 950px;
+        #home::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(to right, rgba(141, 187, 206, 0.06) 0 1px, transparent 1px 64px),
+                repeating-linear-gradient(to bottom, rgba(141, 187, 206, 0.06) 0 1px, transparent 1px 64px);
+            mask-image: radial-gradient(ellipse 80% 60% at 30% 20%, black, transparent 75%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            padding: 64px 40px 0;
         }
 
         .hero-label {
-            color: #777f88;
-            font-size: 13px;
-            letter-spacing: 3px;
+            color: var(--steel-dim);
+            font-family: var(--mono);
+            font-size: 12px;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .hero-content h1 {
-            font-size: clamp(45px, 8vw, 88px);
-            line-height: 0.98;
-            letter-spacing: -3px;
-            margin-bottom: 25px;
+            font-family: var(--display);
+            font-weight: 800;
+            font-size: clamp(40px, 6.4vw, 74px);
+            line-height: 1.02;
+            letter-spacing: -1px;
+            max-width: 900px;
+            margin-bottom: 22px;
+            opacity: 0;
+            animation: rise 0.7s 0.05s ease forwards;
         }
 
         .hero-content h2 {
-            max-width: 850px;
+            max-width: 780px;
 
-            font-size: 24px;
-            line-height: 1.35;
+            font-family: var(--sans);
+            font-size: 21px;
+            line-height: 1.45;
             font-weight: 400;
 
-            color: #c0c5ca;
+            color: var(--blue);
 
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: rise 0.7s 0.18s ease forwards;
         }
 
         .hero-content p {
-            max-width: 780px;
+            max-width: 640px;
 
-            color: #8f969e;
-            font-size: 16px;
+            color: var(--steel);
+            font-size: 15.5px;
+            opacity: 0;
+            animation: rise 0.7s 0.3s ease forwards;
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-content h1, .hero-content h2, .hero-content p {
+                animation: none;
+                opacity: 1;
+            }
         }
 
         .hero-actions {
@@ -170,7 +283,9 @@
             flex-wrap: wrap;
             gap: 12px;
 
-            margin-top: 30px;
+            margin-top: 32px;
+            opacity: 0;
+            animation: rise 0.7s 0.42s ease forwards;
         }
 
         .hero-button {
@@ -178,59 +293,95 @@
             align-items: center;
             justify-content: center;
 
-            padding: 11px 18px;
+            padding: 12px 20px;
 
-            border: 1px solid #555c64;
+            border: 1px solid var(--line-strong);
 
-            color: #ffffff;
+            color: var(--paper);
             text-decoration: none;
 
-            font-size: 13px;
+            font-size: 12.5px;
+            font-family: var(--mono);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
 
-            transition: 0.3s ease;
+            transition: 0.25s ease;
         }
 
         .hero-button:hover,
         .hero-button:focus {
-            background: #ffffff;
-            color: #0b0d10;
-            border-color: #ffffff;
+            background: var(--blue);
+            color: var(--ink);
+            border-color: var(--blue);
         }
 
         .hero-button.secondary {
-            color: #a4abb2;
-            border-color: #282e35;
+            color: var(--steel);
+            border-color: var(--line);
         }
 
         .hero-button.secondary:hover,
         .hero-button.secondary:focus {
-            color: #ffffff;
-            border-color: #ffffff;
+            color: var(--paper);
+            border-color: var(--paper);
             background: transparent;
+        }
+
+        /* TITLE BLOCK — modeled on a drawing sheet's title block */
+
+        .title-block {
+            position: relative;
+            margin-top: 60px;
+            border-top: 1px solid var(--line);
+
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .title-block-field {
+            padding: 16px 22px;
+            border-left: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .title-block-field:first-child {
+            border-left: none;
+        }
+
+        .title-block-field dt {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--steel-dim);
+            margin-bottom: 6px;
+        }
+
+        .title-block-field dd {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--paper);
+            letter-spacing: 0.3px;
         }
 
 
         /* =========================================================
-           SECTIONS
+           SECTIONS (generic)
         ========================================================= */
 
         section {
-            padding: 90px 0;
-            border-bottom: 1px solid #242930;
-        }
-
-        .section-label {
-            color: #777f88;
-            font-size: 12px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
+            padding: 96px 0;
+            border-bottom: 1px solid var(--line);
         }
 
         section h2 {
-            font-size: 38px;
-            line-height: 1.1;
-            margin-bottom: 40px;
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 34px;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            margin-bottom: 44px;
+            max-width: 620px;
         }
 
 
@@ -240,41 +391,56 @@
 
         .about-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 64px;
         }
 
-        .about-grid p {
-            color: #969da5;
-            font-size: 16px;
+        .about-copy p {
+            color: var(--steel);
+            font-size: 15.5px;
+            max-width: 60ch;
         }
 
-        .about-highlight {
-            margin-top: 35px;
-
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
+        .about-copy p + p {
+            margin-top: 18px;
         }
 
-        .about-highlight-card {
-            border: 1px solid #282e35;
-            background: #101318;
-            padding: 20px;
+        /* Spec sheet — replaces boxed highlight cards with a
+           datasheet-style label/value list with dotted leaders. */
+
+        .spec-sheet {
+            border-top: 1px solid var(--line);
         }
 
-        .about-highlight-card strong {
-            display: block;
+        .spec-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
 
-            color: #ffffff;
-            font-size: 15px;
-
-            margin-bottom: 5px;
+            padding: 16px 4px;
+            border-bottom: 1px solid var(--line);
         }
 
-        .about-highlight-card span {
-            color: #777f88;
-            font-size: 12px;
+        .spec-row .spec-label {
+            font-family: var(--mono);
+            font-size: 11.5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--steel-dim);
+            white-space: nowrap;
+        }
+
+        .spec-row .spec-leader {
+            flex: 1;
+            border-bottom: 1px dotted var(--line-strong);
+            transform: translateY(-4px);
+        }
+
+        .spec-row .spec-value {
+            font-size: 14.5px;
+            color: var(--paper);
+            text-align: right;
+            max-width: 60%;
         }
 
 
@@ -285,26 +451,28 @@
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 1px;
+            background: var(--line);
+            border: 1px solid var(--line);
         }
 
         .skill-card {
-            border: 1px solid #282e35;
-            background: #101318;
-
-            padding: 25px;
-
-            transition: 0.3s ease;
+            background: var(--panel);
+            padding: 28px 26px;
+            border-left: 2px solid transparent;
+            transition: border-color 0.25s ease, background 0.25s ease;
         }
 
         .skill-card:hover {
-            border-color: #454c54;
-            transform: translateY(-2px);
+            border-left-color: var(--blue);
+            background: var(--panel-2);
         }
 
         .skill-card h3 {
-            font-size: 18px;
-            margin-bottom: 16px;
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 16.5px;
+            margin-bottom: 18px;
         }
 
         .skill-card ul {
@@ -312,14 +480,21 @@
         }
 
         .skill-card li {
-            color: #9299a1;
-            margin-bottom: 8px;
-            font-size: 14px;
+            color: var(--steel);
+            margin-bottom: 9px;
+            font-size: 13.8px;
+            padding-left: 14px;
+            position: relative;
         }
 
         .skill-card li::before {
-            content: "— ";
-            color: #ffffff;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 1px;
+            background: var(--steel-dim);
         }
 
 
@@ -330,31 +505,28 @@
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 22px;
+            gap: 26px;
         }
 
         .project-card {
-            border: 1px solid #282e35;
-            background: #101318;
-
-            overflow: hidden;
-
-            transition: 0.3s ease;
+            background: var(--panel);
+            padding: 8px;
         }
 
         .project-card:hover {
-            border-color: #4a5159;
-            transform: translateY(-3px);
+            --frame-len: 20px;
         }
+
+        .dwg-frame { transition: background-size 0.25s ease; }
 
 
         /* PROJECT IMAGE / GALLERY */
 
         .project-image {
             width: 100%;
-            height: 280px;
+            height: 272px;
 
-            background: #171b20;
+            background: #101315;
 
             display: flex;
             align-items: center;
@@ -378,14 +550,6 @@
             display: block;
         }
 
-        .project-image.placeholder {
-            color: #5f666e;
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            text-align: center;
-        }
-
 
         /* GALLERY CONTROLS */
 
@@ -396,42 +560,43 @@
 
             transform: translateY(-50%);
 
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
 
-            border: 1px solid #555c64;
+            border: 1px solid var(--line-strong);
 
-            background: rgba(11, 13, 16, 0.85);
+            background: rgba(20, 23, 26, 0.85);
 
-            color: #ffffff;
+            color: var(--paper);
 
             cursor: pointer;
 
-            font-size: 20px;
+            font-size: 18px;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            transition: 0.3s ease;
+            transition: 0.2s ease;
 
             z-index: 5;
         }
 
         .gallery-prev {
-            left: 15px;
+            left: 12px;
         }
 
         .gallery-next {
-            right: 15px;
+            right: 12px;
         }
 
         .gallery-prev:hover,
         .gallery-next:hover,
         .gallery-prev:focus,
         .gallery-next:focus {
-            background: #ffffff;
-            color: #0b0d10;
+            background: var(--blue);
+            color: var(--ink);
+            border-color: var(--blue);
             outline: none;
         }
 
@@ -439,19 +604,18 @@
             position: absolute;
 
             bottom: 12px;
-            left: 50%;
+            left: 12px;
 
-            transform: translateX(-50%);
+            background: rgba(20, 23, 26, 0.88);
 
-            background: rgba(11, 13, 16, 0.85);
+            padding: 4px 9px;
 
-            padding: 4px 10px;
-
+            font-family: var(--mono);
             font-size: 11px;
 
-            color: #b6bcc2;
+            color: var(--steel);
 
-            border: 1px solid #343a41;
+            border: 1px solid var(--line-strong);
 
             z-index: 5;
         }
@@ -460,27 +624,28 @@
         /* PROJECT CONTENT */
 
         .project-content {
-            padding: 25px;
+            padding: 26px 20px 20px;
         }
 
         .project-number {
-            color: #6f7780;
-
+            font-family: var(--mono);
+            color: var(--blue);
             font-size: 11px;
-            letter-spacing: 2px;
-
-            margin-bottom: 8px;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
         }
 
         .project-content h3 {
-            font-size: 22px;
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 21px;
             line-height: 1.25;
 
             margin-bottom: 12px;
         }
 
         .project-content p {
-            color: #9198a0;
+            color: var(--steel);
 
             font-size: 14px;
 
@@ -494,20 +659,29 @@
             display: flex;
             flex-wrap: wrap;
 
-            gap: 8px;
+            gap: 0;
 
             margin-bottom: 18px;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
         }
 
         .project-meta span {
-            color: #777f88;
+            color: var(--steel-dim);
 
-            font-size: 11px;
+            font-family: var(--mono);
+            font-size: 10.5px;
             letter-spacing: 0.5px;
+            text-transform: uppercase;
 
-            padding: 4px 8px;
+            padding: 8px 12px 8px 0;
+            margin-right: 12px;
 
-            border-left: 1px solid #555c64;
+            border-right: 1px solid var(--line);
+        }
+
+        .project-meta span:last-child {
+            border-right: none;
         }
 
 
@@ -520,15 +694,16 @@
         }
 
         .tag {
-            border: 1px solid #363c43;
+            border: 1px solid var(--line-strong);
 
-            padding: 5px 9px;
+            padding: 5px 10px;
 
             font-size: 11px;
+            font-family: var(--mono);
 
-            color: #8e959d;
+            color: var(--steel);
 
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
 
 
@@ -539,56 +714,65 @@
             flex-wrap: wrap;
             gap: 10px;
 
-            margin-top: 18px;
+            margin-top: 20px;
         }
 
         .project-button {
             display: inline-block;
 
-            padding: 9px 15px;
+            padding: 10px 16px;
 
-            border: 1px solid #555c64;
+            border: 1px solid var(--line-strong);
 
             background: transparent;
 
-            color: #ffffff;
+            color: var(--paper);
 
             cursor: pointer;
 
-            font-size: 12px;
+            font-family: var(--mono);
+            font-size: 11.5px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
 
             text-decoration: none;
 
-            transition: 0.3s ease;
+            transition: 0.2s ease;
         }
 
         .project-button:hover,
         .project-button:focus {
-            background: #ffffff;
-            color: #0b0d10;
+            background: var(--blue);
+            color: var(--ink);
+            border-color: var(--blue);
             outline: none;
         }
 
         .project-video {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
 
-            padding: 9px 15px;
+            padding: 10px 16px;
 
-            border: 1px solid #363c43;
+            border: 1px solid var(--line);
 
-            color: #a4abb2;
+            color: var(--steel);
 
             text-decoration: none;
 
-            font-size: 12px;
+            font-family: var(--mono);
+            font-size: 11.5px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
 
-            transition: 0.3s ease;
+            transition: 0.2s ease;
         }
 
         .project-video:hover,
         .project-video:focus {
-            color: #ffffff;
-            border-color: #ffffff;
+            color: var(--paper);
+            border-color: var(--paper);
         }
 
 
@@ -599,25 +783,29 @@
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
+            gap: 1px;
+            background: var(--line);
+            border: 1px solid var(--line);
         }
 
         .achievement-card {
-            border-left: 2px solid #555c64;
+            border-left: 2px solid var(--copper);
 
-            padding: 22px 22px 22px 25px;
+            padding: 24px 24px 24px 22px;
 
-            background: #101318;
+            background: var(--panel);
         }
 
         .achievement-card h3 {
-            font-size: 17px;
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 16.5px;
             margin-bottom: 8px;
         }
 
         .achievement-card p {
-            color: #8f969e;
-            font-size: 14px;
+            color: var(--steel);
+            font-size: 13.8px;
         }
 
 
@@ -626,11 +814,8 @@
         ========================================================= */
 
         .experience-card {
-            padding: 35px;
-
-            border: 1px solid #282e35;
-
-            background: #101318;
+            padding: 40px;
+            background: var(--panel);
         }
 
         .experience-header {
@@ -643,53 +828,61 @@
 
             gap: 10px;
 
-            margin-bottom: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--line);
         }
 
         .experience-header h3 {
-            font-size: 24px;
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 21px;
         }
 
         .experience-duration {
-            color: #777f88;
+            color: var(--steel-dim);
 
-            font-size: 13px;
-            letter-spacing: 1px;
+            font-family: var(--mono);
+            font-size: 12px;
+            letter-spacing: 0.5px;
 
             text-transform: uppercase;
         }
 
         .experience-card > p {
-            color: #9198a0;
+            color: var(--steel);
 
-            max-width: 900px;
+            max-width: 850px;
 
-            margin-bottom: 16px;
+            margin-bottom: 8px;
+            font-size: 15px;
         }
 
         .experience-columns {
-            margin-top: 25px;
+            margin-top: 28px;
 
             display: grid;
             grid-template-columns: repeat(3, 1fr);
 
-            gap: 22px;
+            gap: 28px;
         }
 
         .experience-column {
-            border-top: 1px solid #282e35;
+            border-top: 1px solid var(--line);
 
             padding-top: 18px;
         }
 
         .experience-column h4 {
-            font-size: 15px;
+            font-family: var(--mono);
+            font-size: 11.5px;
 
-            margin-bottom: 12px;
+            margin-bottom: 14px;
 
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
 
             text-transform: uppercase;
+            color: var(--blue);
         }
 
         .experience-column ul {
@@ -697,17 +890,23 @@
         }
 
         .experience-column li {
-            color: #8f969e;
+            color: var(--steel);
 
-            font-size: 13px;
+            font-size: 13.6px;
 
-            margin-bottom: 8px;
+            margin-bottom: 9px;
+            padding-left: 14px;
+            position: relative;
         }
 
         .experience-column li::before {
-            content: "— ";
-
-            color: #ffffff;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 1px;
+            background: var(--steel-dim);
         }
 
 
@@ -717,29 +916,30 @@
 
         .research-stack {
             display: grid;
-            gap: 22px;
+            gap: 24px;
         }
 
         .research-card {
-            border: 1px solid #282e35;
+            background: var(--panel);
 
-            background: #101318;
-
-            padding: 35px;
+            padding: 36px 40px;
         }
 
         .research-card h3 {
-            font-size: 24px;
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 21px;
 
             margin-bottom: 14px;
         }
 
         .research-card p {
-            color: #9198a0;
+            color: var(--steel);
 
-            max-width: 900px;
+            max-width: 850px;
 
             margin-bottom: 18px;
+            font-size: 15px;
         }
 
 
@@ -752,42 +952,52 @@
 
             grid-template-columns: 1fr 1fr;
 
-            gap: 50px;
+            gap: 60px;
         }
 
         .contact-intro {
-            color: #9198a0;
+            color: var(--steel);
 
-            max-width: 650px;
+            max-width: 600px;
 
-            font-size: 16px;
+            font-size: 15.5px;
         }
 
         .contact-links {
             display: flex;
 
             flex-direction: column;
-
-            gap: 14px;
         }
 
         .contact-links a {
             text-decoration: none;
 
-            color: #a4abb2;
+            color: var(--paper);
 
-            border-bottom: 1px solid #282e35;
+            border-bottom: 1px solid var(--line);
 
-            padding-bottom: 12px;
+            padding: 16px 2px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-            transition: 0.3s ease;
+            font-size: 15px;
+
+            transition: 0.2s ease;
+        }
+
+        .contact-links a span.link-label {
+            color: var(--steel-dim);
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .contact-links a:hover,
         .contact-links a:focus {
-            color: #ffffff;
-
-            border-color: #ffffff;
+            color: var(--blue);
+            border-color: var(--blue);
         }
 
 
@@ -809,7 +1019,7 @@
 
             padding: 25px;
 
-            background: rgba(0, 0, 0, 0.82);
+            background: rgba(10, 12, 14, 0.86);
         }
 
         .case-study-modal.active {
@@ -818,39 +1028,39 @@
 
         .case-study-content {
             width: 100%;
-            max-width: 850px;
+            max-width: 820px;
 
             max-height: 85vh;
 
             overflow-y: auto;
 
-            background: #101318;
+            background: var(--panel);
 
-            border: 1px solid #3a4148;
-
-            padding: 40px;
+            padding: 44px;
 
             position: relative;
         }
 
         .case-study-number {
-            color: #777f88;
+            color: var(--blue);
 
+            font-family: var(--mono);
             font-size: 11px;
+            letter-spacing: 1.5px;
 
-            letter-spacing: 2px;
-
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .case-study-content h2 {
-            font-size: 32px;
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 30px;
 
             margin-bottom: 20px;
         }
 
         .case-study-content p {
-            color: #969da5;
+            color: var(--steel);
 
             font-size: 15px;
 
@@ -858,15 +1068,17 @@
         }
 
         .case-study-content h4 {
-            font-size: 14px;
+            font-family: var(--mono);
+            font-size: 11.5px;
 
             text-transform: uppercase;
 
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            color: var(--blue);
 
-            margin-top: 28px;
+            margin-top: 30px;
 
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
 
         .case-study-content ul {
@@ -874,45 +1086,51 @@
         }
 
         .case-study-content li {
-            color: #969da5;
+            color: var(--steel);
 
             font-size: 14px;
 
-            margin-bottom: 8px;
+            margin-bottom: 9px;
+            padding-left: 14px;
+            position: relative;
         }
 
         .case-study-content li::before {
-            content: "— ";
-
-            color: #ffffff;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 1px;
+            background: var(--steel-dim);
         }
 
         .case-study-close {
             position: absolute;
 
-            top: 15px;
-            right: 15px;
+            top: 18px;
+            right: 18px;
 
-            width: 36px;
-            height: 36px;
+            width: 34px;
+            height: 34px;
 
-            border: 1px solid #454c54;
+            border: 1px solid var(--line-strong);
 
             background: transparent;
 
-            color: #ffffff;
+            color: var(--paper);
 
-            font-size: 20px;
+            font-size: 18px;
 
             cursor: pointer;
+            transition: 0.2s ease;
         }
 
         .case-study-close:hover,
         .case-study-close:focus {
-            background: #ffffff;
-
-            color: #0b0d10;
-
+            background: var(--blue);
+            color: var(--ink);
+            border-color: var(--blue);
             outline: none;
         }
 
@@ -922,11 +1140,13 @@
         ========================================================= */
 
         footer {
-            padding: 30px 0;
+            padding: 28px 0;
 
-            color: #626a72;
+            color: var(--steel-dim);
 
-            font-size: 12px;
+            font-family: var(--mono);
+            font-size: 11.5px;
+            letter-spacing: 0.5px;
 
             text-align: center;
         }
@@ -941,9 +1161,9 @@
             .nav-container {
                 flex-direction: column;
 
-                padding: 20px 0;
+                padding: 18px 0;
 
-                gap: 15px;
+                gap: 14px;
             }
 
             .nav-links {
@@ -951,18 +1171,26 @@
 
                 justify-content: center;
 
-                gap: 15px;
+                gap: 16px;
+            }
+
+            .hero-inner {
+                padding: 40px 22px 0;
+            }
+
+            .title-block {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .title-block-field:nth-child(2n+1) {
+                border-left: none;
             }
 
             .about-grid,
             .contact-grid {
                 grid-template-columns: 1fr;
 
-                gap: 30px;
-            }
-
-            .about-highlight {
-                grid-template-columns: 1fr 1fr;
+                gap: 34px;
             }
 
             .skills-grid,
@@ -984,29 +1212,19 @@
         @media (max-width: 600px) {
 
             section {
-                padding: 70px 0;
+                padding: 68px 0;
             }
 
             section h2 {
-                font-size: 30px;
-            }
-
-            #home {
-                min-height: 75vh;
-            }
-
-            .hero-content h1 {
-                font-size: 48px;
-
-                letter-spacing: -2px;
+                font-size: 27px;
             }
 
             .hero-content h2 {
-                font-size: 18px;
+                font-size: 17px;
             }
 
             .hero-content p {
-                font-size: 15px;
+                font-size: 14.5px;
             }
 
             .hero-actions {
@@ -1019,34 +1237,58 @@
                 text-align: center;
             }
 
+            .title-block {
+                grid-template-columns: 1fr 1fr;
+            }
+
             .skills-grid,
-            .achievements-grid,
-            .about-highlight {
+            .achievements-grid {
                 grid-template-columns: 1fr;
             }
 
             .project-image {
-                height: 230px;
+                height: 220px;
             }
 
-            .project-content,
+            .project-content {
+                padding: 22px 16px 16px;
+            }
+
             .experience-card,
             .research-card {
-                padding: 22px;
+                padding: 24px;
+            }
+
+            .experience-columns {
+                gap: 22px;
             }
 
             .experience-header h3 {
-                font-size: 20px;
+                font-size: 19px;
             }
 
             .case-study-content {
-                padding: 28px 22px;
+                padding: 30px 22px;
 
                 max-height: 90vh;
             }
 
             .case-study-content h2 {
-                font-size: 26px;
+                font-size: 24px;
+            }
+
+            .spec-row {
+                flex-wrap: wrap;
+            }
+
+            .spec-row .spec-value {
+                max-width: 100%;
+                text-align: left;
+                flex-basis: 100%;
+            }
+
+            .spec-row .spec-leader {
+                display: none;
             }
         }
 
@@ -1083,7 +1325,7 @@
         <div class="nav-container">
 
             <a href="#home" class="logo" aria-label="Abdul Wahid Sibly home">
-                AWS
+                A.W.SIBLY
             </a>
 
             <ul class="nav-links">
@@ -1114,7 +1356,7 @@
 
     <section id="home">
 
-        <div class="container">
+        <div class="hero-inner">
 
             <div class="hero-content">
 
@@ -1123,12 +1365,11 @@
                 </div>
 
                 <h1>
-                    ABDUL WAHID<br>
-                    SIBLY
+                    Abdul Wahid Sibly
                 </h1>
 
                 <h2>
-                    Mechanical Design Engineer | CAD, Product Development & Simulation
+                    Mechanical Design Engineer — CAD, Product Development &amp; Simulation
                 </h2>
 
                 <p>
@@ -1140,7 +1381,7 @@
                 <div class="hero-actions">
 
                     <!-- Place your CV PDF in the same folder as index.html -->
-                    <a href="CV.pdf"
+                    <a href="Abdul_Wahid_Sibly__CV.pdf"
                        class="hero-button"
                        target="_blank"
                        rel="noopener noreferrer">
@@ -1161,6 +1402,35 @@
 
             </div>
 
+            <dl class="title-block">
+
+                <div class="title-block-field">
+                    <dt>Drawn by</dt>
+                    <dd>A. W. Sibly</dd>
+                </div>
+
+                <div class="title-block-field">
+                    <dt>Discipline</dt>
+                    <dd>Mechanical Design</dd>
+                </div>
+
+                <div class="title-block-field">
+                    <dt>Institution</dt>
+                    <dd>MIST, Bangladesh</dd>
+                </div>
+
+                <div class="title-block-field">
+                    <dt>Scale</dt>
+                    <dd>N.T.S.</dd>
+                </div>
+
+                <div class="title-block-field">
+                    <dt>Rev</dt>
+                    <dd>2026</dd>
+                </div>
+
+            </dl>
+
         </div>
 
     </section>
@@ -1174,9 +1444,7 @@
 
         <div class="container">
 
-            <div class="section-label">
-                01 — About
-            </div>
+            <div class="sheet-tag">Sheet 01 <span>/ 07 — About</span></div>
 
             <h2>
                 Engineering with purpose.
@@ -1184,38 +1452,44 @@
 
             <div class="about-grid">
 
-                <p>
-                    I am a Mechanical Engineering graduate from the Military Institute of
-                    Science and Technology (MIST), Bangladesh, with a strong interest in
-                    mechanical design, product development, CAD modeling, structural analysis
-                    and engineering innovation.
-                </p>
+                <div class="about-copy">
 
-                <p>
-                    My experience includes Formula Student vehicle development, industrial
-                    machinery maintenance, engineering simulation, CAD-based product development
-                    and sustainable materials research. I enjoy turning engineering concepts into
-                    practical, manufacturable solutions.
-                </p>
+                    <p>
+                        I am a Mechanical Engineering graduate from the Military Institute of
+                        Science and Technology (MIST), Bangladesh, with a strong interest in
+                        mechanical design, product development, CAD modeling, structural analysis
+                        and engineering innovation.
+                    </p>
 
-            </div>
+                    <p>
+                        My experience includes Formula Student vehicle development, industrial
+                        machinery maintenance, engineering simulation, CAD-based product development
+                        and sustainable materials research. I enjoy turning engineering concepts into
+                        practical, manufacturable solutions.
+                    </p>
 
-
-            <div class="about-highlight">
-
-                <div class="about-highlight-card">
-                    <strong>CAD & Product Design</strong>
-                    <span>Concept development, modeling and assemblies</span>
                 </div>
 
-                <div class="about-highlight-card">
-                    <strong>Analysis & Simulation</strong>
-                    <span>FEA, structural analysis and CFD</span>
-                </div>
+                <div class="spec-sheet">
 
-                <div class="about-highlight-card">
-                    <strong>Design to Manufacturing</strong>
-                    <span>Fabrication, prototyping and validation</span>
+                    <div class="spec-row">
+                        <span class="spec-label">CAD &amp; Product Design</span>
+                        <span class="spec-leader"></span>
+                        <span class="spec-value">Concept development, modeling and assemblies</span>
+                    </div>
+
+                    <div class="spec-row">
+                        <span class="spec-label">Analysis &amp; Simulation</span>
+                        <span class="spec-leader"></span>
+                        <span class="spec-value">FEA, structural analysis and CFD</span>
+                    </div>
+
+                    <div class="spec-row">
+                        <span class="spec-label">Design to Manufacturing</span>
+                        <span class="spec-leader"></span>
+                        <span class="spec-value">Fabrication, prototyping and validation</span>
+                    </div>
+
                 </div>
 
             </div>
@@ -1233,9 +1507,7 @@
 
         <div class="container">
 
-            <div class="section-label">
-                02 — Technical Skills
-            </div>
+            <div class="sheet-tag">Sheet 02 <span>/ 07 — Technical Skills</span></div>
 
             <h2>
                 Tools I work with.
@@ -1247,7 +1519,7 @@
 
                 <div class="skill-card">
 
-                    <h3>CAD & Design</h3>
+                    <h3>CAD &amp; Design</h3>
 
                     <ul>
                         <li>SolidWorks</li>
@@ -1262,13 +1534,13 @@
 
                 <div class="skill-card">
 
-                    <h3>Simulation & Analysis</h3>
+                    <h3>Simulation &amp; Analysis</h3>
 
                     <ul>
                         <li>ANSYS Workbench</li>
                         <li>Finite Element Analysis</li>
                         <li>Static Structural Analysis</li>
-                        <li>Stress & Deflection Analysis</li>
+                        <li>Stress &amp; Deflection Analysis</li>
                         <li>ANSYS Fluent</li>
                         <li>MATLAB</li>
                     </ul>
@@ -1282,7 +1554,7 @@
 
                     <ul>
                         <li>Design for Manufacturing</li>
-                        <li>Welding & Fabrication</li>
+                        <li>Welding &amp; Fabrication</li>
                         <li>Tolerances</li>
                         <li>Assembly Planning</li>
                         <li>Material Selection</li>
@@ -1336,9 +1608,7 @@
 
         <div class="container">
 
-            <div class="section-label">
-                03 — Selected Projects
-            </div>
+            <div class="sheet-tag">Sheet 03 <span>/ 07 — Selected Projects</span></div>
 
             <h2>
                 Engineering in practice.
@@ -1352,7 +1622,7 @@
                      PROJECT 01
                 ================================================= -->
 
-                <div class="project-card">
+                <div class="project-card dwg-frame">
 
                     <div class="project-image">
 
@@ -1428,7 +1698,7 @@
                     <div class="project-content">
 
                         <div class="project-number">
-                            PROJECT 01
+                            Drawing No. 01
                         </div>
 
                         <h3>
@@ -1483,7 +1753,7 @@
                      PROJECT 02
                 ================================================= -->
 
-                <div class="project-card">
+                <div class="project-card dwg-frame">
 
                     <div class="project-image">
 
@@ -1523,11 +1793,11 @@
                     <div class="project-content">
 
                         <div class="project-number">
-                            PROJECT 02
+                            Drawing No. 02
                         </div>
 
                         <h3>
-                            Radial Engine CAD Design & Assembly
+                            Radial Engine CAD Design &amp; Assembly
                         </h3>
 
                         <p>
@@ -1574,7 +1844,7 @@
                      PROJECT 03
                 ================================================= -->
 
-                <div class="project-card">
+                <div class="project-card dwg-frame">
 
                     <div class="project-image">
 
@@ -1614,7 +1884,7 @@
                     <div class="project-content">
 
                         <div class="project-number">
-                            PROJECT 03
+                            Drawing No. 03
                         </div>
 
                         <h3>
@@ -1660,7 +1930,7 @@
                                class="project-video"
                                target="_blank"
                                rel="noopener noreferrer">
-                                ▶ Watch Video
+                                Watch Video
                             </a>
 
                         </div>
@@ -1674,7 +1944,7 @@
                      PROJECT 04
                 ================================================= -->
 
-                <div class="project-card">
+                <div class="project-card dwg-frame">
 
                     <div class="project-image">
 
@@ -1728,7 +1998,7 @@
                     <div class="project-content">
 
                         <div class="project-number">
-                            PROJECT 04
+                            Drawing No. 04
                         </div>
 
                         <h3>
@@ -1780,7 +2050,7 @@
                      PROJECT 05
                 ================================================= -->
 
-                <div class="project-card">
+                <div class="project-card dwg-frame">
 
                     <div class="project-image">
 
@@ -1838,7 +2108,7 @@
                     <div class="project-content">
 
                         <div class="project-number">
-                            PROJECT 05
+                            Drawing No. 05
                         </div>
 
                         <h3>
@@ -1902,9 +2172,7 @@
 
         <div class="container">
 
-            <div class="section-label">
-                04 — Achievements
-            </div>
+            <div class="sheet-tag">Sheet 04 <span>/ 07 — Achievements</span></div>
 
             <h2>
                 Milestones along the way.
@@ -1981,16 +2249,14 @@
 
         <div class="container">
 
-            <div class="section-label">
-                05 — Experience
-            </div>
+            <div class="sheet-tag">Sheet 05 <span>/ 07 — Experience</span></div>
 
             <h2>
                 Where I've worked.
             </h2>
 
 
-            <div class="experience-card">
+            <div class="experience-card dwg-frame">
 
 
                 <div class="experience-header">
@@ -2125,19 +2391,17 @@
 
         <div class="container">
 
-            <div class="section-label">
-                06 — Research
-            </div>
+            <div class="sheet-tag">Sheet 06 <span>/ 07 — Research</span></div>
 
             <h2>
-                Research & publication.
+                Research &amp; publication.
             </h2>
 
 
             <div class="research-stack">
 
 
-                <div class="research-card">
+                <div class="research-card dwg-frame">
 
                     <h3>
                         Eco-Friendly Ecobricks for Sustainable Waste Management
@@ -2161,10 +2425,10 @@
                 </div>
 
 
-                <div class="research-card">
+                <div class="research-card dwg-frame">
 
                     <h3>
-                        Business Analysis & Process Management
+                        Business Analysis &amp; Process Management
                     </h3>
 
                     <p>
@@ -2193,13 +2457,11 @@
          CONTACT
     ========================================================= -->
 
-    <section id="contact">
+    <section id="contact" style="border-bottom: none;">
 
         <div class="container">
 
-            <div class="section-label">
-                07 — Contact
-            </div>
+            <div class="sheet-tag">Sheet 07 <span>/ 07 — Contact</span></div>
 
             <h2>
                 Let's build something.
@@ -2226,19 +2488,22 @@
                 <div class="contact-links">
 
                     <a href="mailto:siblynoman05@gmail.com">
-                        Email — siblynoman05@gmail.com
+                        <span>siblynoman05@gmail.com</span>
+                        <span class="link-label">Email</span>
                     </a>
 
                     <a href="https://www.linkedin.com/in/awsibly971/"
                        target="_blank"
                        rel="noopener noreferrer">
-                        LinkedIn
+                        <span>awsibly971</span>
+                        <span class="link-label">LinkedIn</span>
                     </a>
 
                     <a href="https://github.com/abdulwahidsibly"
                        target="_blank"
                        rel="noopener noreferrer">
-                        GitHub
+                        <span>abdulwahidsibly</span>
+                        <span class="link-label">GitHub</span>
                     </a>
 
                 </div>
@@ -2260,7 +2525,7 @@
          aria-modal="true"
          aria-labelledby="caseStudyTitle">
 
-        <div class="case-study-content">
+        <div class="case-study-content dwg-frame">
 
             <button class="case-study-close"
                     onclick="closeCaseStudy()"
@@ -2352,7 +2617,7 @@
 
             project1: {
 
-                number: "PROJECT 01",
+                number: "Drawing No. 01",
 
                 title: "Spaceframe Chassis Design",
 
@@ -2376,7 +2641,7 @@
 
             project2: {
 
-                number: "PROJECT 02",
+                number: "Drawing No. 02",
 
                 title: "Radial Engine CAD Design & Assembly",
 
@@ -2399,7 +2664,7 @@
 
             project3: {
 
-                number: "PROJECT 03",
+                number: "Drawing No. 03",
 
                 title: "F1 Car from Scrap",
 
@@ -2423,7 +2688,7 @@
 
             project4: {
 
-                number: "PROJECT 04",
+                number: "Drawing No. 04",
 
                 title: "Folding Drone Frame Design",
 
@@ -2447,7 +2712,7 @@
 
             project5: {
 
-                number: "PROJECT 05",
+                number: "Drawing No. 05",
 
                 title: "Laminar Flow Analysis in a Circular Pipe",
 
@@ -2530,7 +2795,7 @@
                 </p>
 
                 <h4>
-                    Results & Validation
+                    Results &amp; Validation
                 </h4>
 
                 <p>
