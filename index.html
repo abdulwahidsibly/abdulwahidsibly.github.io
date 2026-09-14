@@ -1053,8 +1053,8 @@
 ========================================================= */
 
 .contact-links {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: nowrap;
     gap: 12px;
     margin-top: 24px;
 }
@@ -1388,6 +1388,7 @@
          @media (max-width: 768px) {
 
     .contact-links {
+        display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px;
     }
@@ -1396,6 +1397,8 @@
         padding: 10px 8px;
         font-size: 10px;
     }
+
+}
 
 }
 
