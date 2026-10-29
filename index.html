@@ -3280,3 +3280,3285 @@
 </body>
 
 </html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Abdul Wahid Sibly | Mechanical Design Engineer</title>
+
+    <meta name="description"
+        content="Portfolio of Abdul Wahid Sibly, Mechanical Design Engineer specializing in CAD design, product development, structural analysis, manufacturing and motorsport engineering.">
+
+    <meta name="author" content="Abdul Wahid Sibly">
+
+    <meta property="og:title" content="Abdul Wahid Sibly | Mechanical Design Engineer">
+    <meta property="og:description"
+        content="Mechanical Design Engineer specializing in CAD design, product development, structural analysis, manufacturing and motorsport engineering.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://abdulwahidsibly.github.io/">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+
+        /*  =========================================================
+           TOKENS
+        ========================================================= */
+
+        :root {
+            --ink: #14171a;
+            --panel: #1a1e22;
+            --panel-2: #1f2429;
+
+            --line: #2a2f35;
+            --line-strong: #3c434b;
+
+            --paper: #ece8df;
+            --steel: #9aa1a8;
+            --steel-dim: #676e75;
+
+            --blue: #8dbbce;
+            --blue-dim: #5d818f;
+            --copper: #d97a46;
+
+            --sans: 'IBM Plex Sans', Arial, sans-serif;
+            --display: 'Archivo', 'IBM Plex Sans', Arial, sans-serif;
+            --mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+            --frame-len: 14px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 84px;
+        }
+
+        body {
+            font-family: var(--sans);
+            background: var(--ink);
+            color: var(--paper);
+            line-height: 1.7;
+            font-size: 16px;
+        }
+
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1180px;
+            margin: auto;
+        }
+
+        ::selection {
+            background: var(--blue-dim);
+            color: var(--ink);
+        }
+
+        :focus-visible {
+            outline: 1px solid var(--blue);
+            outline-offset: 3px;
+        }
+
+
+        /* =========================================================
+           FEATURED ACHIEVEMENT / PRESS FEATURE
+        ========================================================= */
+
+        .featured-achievement {
+            margin: 22px 0 20px;
+            padding: 16px 18px;
+
+            border-left: 2px solid var(--copper);
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+
+            background: rgba(217, 122, 70, 0.04);
+        }
+
+        .featured-achievement-label {
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+
+            color: var(--copper);
+
+            margin-bottom: 8px;
+        }
+
+        .featured-achievement h4 {
+            font-family: var(--display);
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1.4;
+
+            color: var(--paper);
+
+            margin-bottom: 10px;
+        }
+
+        .featured-achievement p {
+            color: var(--steel-dim);
+            font-size: 12.8px;
+
+            margin-bottom: 12px;
+        }
+
+        .featured-achievement a {
+            display: inline-block;
+
+            color: var(--blue);
+
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 0.6px;
+            text-transform: uppercase;
+
+            text-decoration: none;
+
+            border-bottom: 1px solid var(--blue-dim);
+
+            padding-bottom: 2px;
+
+            transition: 0.2s ease;
+        }
+
+        .featured-achievement a:hover,
+        .featured-achievement a:focus {
+            color: var(--paper);
+            border-color: var(--paper);
+        }
+
+
+        /* =========================================================
+           DRAWING-SHEET FRAME UTILITY
+           Corner registration marks, like crop marks on a
+           technical drawing sheet.
+        ========================================================= */
+
+        .dwg-frame {
+            position: relative;
+            background:
+                linear-gradient(var(--line-strong), var(--line-strong)) top left / var(--frame-len) 1px no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) top left / 1px var(--frame-len) no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) top right / var(--frame-len) 1px no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) top right / 1px var(--frame-len) no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) bottom left / var(--frame-len) 1px no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) bottom left / 1px var(--frame-len) no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) bottom right / var(--frame-len) 1px no-repeat,
+                linear-gradient(var(--line-strong), var(--line-strong)) bottom right / 1px var(--frame-len) no-repeat;
+        }
+
+        .sheet-tag {
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 1px;
+            color: var(--blue);
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+
+        .sheet-tag span {
+            color: var(--steel-dim);
+        }
+
+
+        /*=========================================================
+           NAVIGATION
+        ========================================================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(20, 23, 26, 0.94);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(8px);
+        }
+
+        .nav-container {
+            width: 90%;
+            max-width: 1180px;
+            margin: auto;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            min-height: 66px;
+        }
+
+        .logo {
+            font-family: var(--mono);
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 3px;
+            color: var(--blue);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--steel);
+            font-size: 13.5px;
+            padding-bottom: 3px;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: var(--paper);
+            border-color: var(--blue);
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        #home {
+            position: relative;
+            padding: 74px 0 0;
+            border-bottom: 1px solid var(--line);
+            overflow: hidden;
+        }
+
+        #home::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                repeating-linear-gradient(to right, rgba(141, 187, 206, 0.06) 0 1px, transparent 1px 64px),
+                repeating-linear-gradient(to bottom, rgba(141, 187, 206, 0.06) 0 1px, transparent 1px 64px);
+            mask-image: radial-gradient(ellipse 80% 60% at 30% 20%, black, transparent 75%);
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            position: relative;
+            padding: 64px 40px 0;
+        }
+
+        .hero-label {
+            color: var(--steel-dim);
+            font-family: var(--mono);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 22px;
+        }
+
+        .hero-content h1 {
+            font-family: var(--display);
+            font-weight: 800;
+            font-size: clamp(40px, 6.4vw, 74px);
+            line-height: 1.02;
+            letter-spacing: -1px;
+            max-width: 900px;
+            margin-bottom: 22px;
+            opacity: 0;
+            animation: rise 0.7s 0.05s ease forwards;
+        }
+
+        .hero-content h2 {
+            max-width: 780px;
+
+            font-family: var(--sans);
+            font-size: 21px;
+            line-height: 1.45;
+            font-weight: 400;
+
+            color: var(--blue);
+
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: rise 0.7s 0.18s ease forwards;
+        }
+
+        .hero-content p {
+            max-width: 640px;
+
+            color: var(--steel);
+            font-size: 15.5px;
+            opacity: 0;
+            animation: rise 0.7s 0.3s ease forwards;
+        }
+
+        @keyframes rise {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-content h1, .hero-content h2, .hero-content p {
+                animation: none;
+                opacity: 1;
+            }
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+
+            margin-top: 32px;
+            opacity: 0;
+            animation: rise 0.7s 0.42s ease forwards;
+        }
+
+        .hero-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 12px 20px;
+
+            border: 1px solid var(--line-strong);
+
+            color: var(--paper);
+            text-decoration: none;
+
+            font-size: 12.5px;
+            font-family: var(--mono);
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+
+            transition: 0.25s ease;
+        }
+
+        .hero-button:hover,
+        .hero-button:focus {
+            background: var(--blue);
+            color: var(--ink);
+            border-color: var(--blue);
+        }
+
+        .hero-button.secondary {
+            color: var(--steel);
+            border-color: var(--line);
+        }
+
+        .hero-button.secondary:hover,
+        .hero-button.secondary:focus {
+            color: var(--paper);
+            border-color: var(--paper);
+            background: transparent;
+        }
+
+        /* TITLE BLOCK — modeled on a drawing sheet's title block */
+
+        .title-block {
+            position: relative;
+            margin-top: 60px;
+            border-top: 1px solid var(--line);
+
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+        }
+
+        .title-block-field {
+            padding: 16px 22px;
+            border-left: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .title-block-field:first-child {
+            border-left: none;
+        }
+
+        .title-block-field dt {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--steel-dim);
+            margin-bottom: 6px;
+        }
+
+        .title-block-field dd {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--paper);
+            letter-spacing: 0.3px;
+        }
+
+
+        /* =========================================================
+           SECTIONS (generic)
+        ========================================================= */
+
+        section {
+            padding: 96px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        section h2 {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 34px;
+            line-height: 1.15;
+            letter-spacing: -0.5px;
+            margin-bottom: 44px;
+            max-width: 620px;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 64px;
+        }
+
+        .about-copy p {
+            color: var(--steel);
+            font-size: 15.5px;
+            max-width: 60ch;
+        }
+
+        .about-copy p + p {
+            margin-top: 18px;
+        }
+
+        /* Spec sheet — replaces boxed highlight cards with a
+           datasheet-style label/value list with dotted leaders. */
+
+        .spec-sheet {
+            border-top: 1px solid var(--line);
+        }
+
+        .spec-row {
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+
+            padding: 16px 4px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .spec-row .spec-label {
+            font-family: var(--mono);
+            font-size: 11.5px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--steel-dim);
+            white-space: nowrap;
+        }
+
+        .spec-row .spec-leader {
+            flex: 1;
+            border-bottom: 1px dotted var(--line-strong);
+            transform: translateY(-4px);
+        }
+
+        .spec-row .spec-value {
+            font-size: 14.5px;
+            color: var(--paper);
+            text-align: right;
+            max-width: 60%;
+        }
+
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1px;
+            background: var(--line);
+            border: 1px solid var(--line);
+        }
+
+        .skill-card {
+            flex: 1 1 300px;
+            background: var(--panel);
+            padding: 28px 26px;
+            border-left: 2px solid transparent;
+            transition: border-color 0.25s ease, background 0.25s ease;
+        }
+
+        .skill-card:hover {
+            border-left-color: var(--blue);
+            background: var(--panel-2);
+        }
+
+        .skill-card h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 16.5px;
+            margin-bottom: 18px;
+        }
+
+        .skill-card ul {
+            list-style: none;
+        }
+
+        .skill-card li {
+            color: var(--steel);
+            margin-bottom: 9px;
+            font-size: 13.8px;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .skill-card li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 1px;
+            background: var(--steel-dim);
+        }
+
+
+        /* =========================================================
+           PROJECTS
+        ========================================================= */
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 26px;
+        }
+
+        /* Featured Project 01 */
+        .project-card:first-child {
+            grid-column: 1 / -1;
+        }
+
+        .project-card:first-child .project-image {
+            height: 380px;
+        }
+
+        .project-card:first-child .project-content {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        /* Mobile */
+        @media (max-width: 768px) {
+
+            .project-card:first-child {
+                grid-column: auto;
+            }
+
+            .project-card:first-child .project-content {
+                grid-template-columns: 1fr;
+            }
+
+            .project-card:first-child .project-image {
+                height: 280px;
+            }
+
+        }
+
+        .project-card {
+            background: var(--panel);
+            padding: 8px;
+        }
+
+        .project-card:hover {
+            --frame-len: 20px;
+        }
+
+        .dwg-frame { transition: background-size 0.25s ease; }
+
+
+        /* PROJECT IMAGE / GALLERY */
+
+        .project-image {
+            width: 100%;
+            height: 272px;
+
+            background: #101315;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            overflow: hidden;
+
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            display: none;
+        }
+
+        .project-image img.active {
+            display: block;
+        }
+
+
+        /* GALLERY CONTROLS */
+
+        .gallery-prev,
+        .gallery-next {
+            position: absolute;
+            top: 50%;
+
+            transform: translateY(-50%);
+
+            width: 34px;
+            height: 34px;
+
+            border: 1px solid var(--line-strong);
+
+            background: rgba(20, 23, 26, 0.85);
+
+            color: var(--paper);
+
+            cursor: pointer;
+
+            font-size: 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            transition: 0.2s ease;
+
+            z-index: 5;
+        }
+
+        .gallery-prev {
+            left: 12px;
+        }
+
+        .gallery-next {
+            right: 12px;
+        }
+
+        .gallery-prev:hover,
+        .gallery-next:hover,
+        .gallery-prev:focus,
+        .gallery-next:focus {
+            background: var(--blue);
+            color: var(--ink);
+            border-color: var(--blue);
+            outline: none;
+        }
+
+        .gallery-counter {
+            position: absolute;
+
+            bottom: 12px;
+            left: 12px;
+
+            background: rgba(20, 23, 26, 0.88);
+
+            padding: 4px 9px;
+
+            font-family: var(--mono);
+            font-size: 11px;
+
+            color: var(--steel);
+
+            border: 1px solid var(--line-strong);
+
+            z-index: 5;
+        }
+
+
+        /* PROJECT CONTENT */
+
+        .project-content {
+            padding: 26px 20px 20px;
+        }
+
+        .project-number {
+            font-family: var(--mono);
+            color: var(--blue);
+            font-size: 11px;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+        }
+
+        .project-content h3 {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 21px;
+            line-height: 1.25;
+
+            margin-bottom: 12px;
+        }
+
+        .project-content p {
+            color: var(--steel);
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+            
+        }
+
+
+        /* PROJECT META */
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+
+            gap: 0;
+
+            margin-bottom: 18px;
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .project-meta span {
+            color: var(--steel-dim);
+
+            font-family: var(--mono);
+            font-size: 10.5px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+
+            padding: 8px 12px 8px 0;
+            margin-right: 12px;
+
+            border-right: 1px solid var(--line);
+        }
+
+        .project-meta span:last-child {
+            border-right: none;
+        }
+
+
+        /* TAGS */
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            border: 1px solid var(--line-strong);
+
+            padding: 5px 10px;
+
+            font-size: 11px;
+            font-family: var(--mono);
+
+            color: var(--steel);
+
+            letter-spacing: 0.3px;
+        }
+
+
+        /* PROJECT ACTIONS */
+
+        .project-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+
+            margin-top: 20px;
+        }
+
+        .project-button {
+            display: inline-block;
+
+            padding: 10px 16px;
+
+            border: 1px solid var(--line-strong);
+
+            background: transparent;
+
+            color: var(--paper);
+
+            cursor: pointer;
+
+            font-family: var(--mono);
+            font-size: 11.5px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+
+            text-decoration: none;
+
+            transition: 0.2s ease;
+        }
+
+        .project-button:hover,
+        .project-button:focus {
+            background: var(--blue);
+            color: var(--ink);
+            border-color: var(--blue);
+            outline: none;
+        }
+
+        .project-video {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+
+            padding: 10px 16px;
+
+            border: 1px solid var(--line);
+
+            color: var(--steel);
+
+            text-decoration: none;
+
+            font-family: var(--mono);
+            font-size: 11.5px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+
+            transition: 0.2s ease;
+        }
+
+        .project-video:hover,
+        .project-video:focus {
+            color: var(--paper);
+            border-color: var(--paper);
+        }
+
+
+        /* =========================================================
+           ACHIEVEMENTS
+        ========================================================= */
+
+        .achievements-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1px;
+            background: var(--line);
+            border: 1px solid var(--line);
+        }
+
+        .achievement-card {
+            flex: 1 1 260px;
+            border-left: 2px solid var(--copper);
+
+            padding: 24px 24px 24px 22px;
+
+            background: var(--panel);
+        }
+
+        .achievement-card h3 {
+            font-family: var(--display);
+            font-weight: 600;
+            font-size: 16.5px;
+            margin-bottom: 8px;
+        }
+
+        .achievement-card p {
+            color: var(--steel);
+            font-size: 13.8px;
+        }
+
+
+        /* =========================================================
+           EXPERIENCE
+        ========================================================= */
+
+        .experience-card {
+            padding: 40px;
+            background: var(--panel);
+        }
+
+        .experience-header {
+            display: flex;
+
+            justify-content: space-between;
+            align-items: baseline;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .experience-header h3 {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 21px;
+        }
+
+        .experience-duration {
+            color: var(--steel-dim);
+
+            font-family: var(--mono);
+            font-size: 12px;
+            letter-spacing: 0.5px;
+
+            text-transform: uppercase;
+        }
+
+        .experience-card > p {
+            color: var(--steel);
+
+            max-width: 850px;
+
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .experience-columns {
+            margin-top: 28px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 28px;
+        }
+
+        .experience-column {
+            border-top: 1px solid var(--line);
+
+            padding-top: 18px;
+        }
+
+        .experience-column h4 {
+            font-family: var(--mono);
+            font-size: 11.5px;
+
+            margin-bottom: 14px;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+            color: var(--blue);
+        }
+
+        .experience-column ul {
+            list-style: none;
+        }
+
+        .experience-column li {
+            color: var(--steel);
+
+            font-size: 13.6px;
+
+            margin-bottom: 9px;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .experience-column li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 1px;
+            background: var(--steel-dim);
+        }
+         .experience-card + .experience-card {
+            margin-top: 24px;
+        }
+
+
+        /* =========================================================
+           RESEARCH
+        ========================================================= */
+
+        .research-stack {
+            display: grid;
+            gap: 24px;
+        }
+
+        .research-card {
+            background: var(--panel);
+
+            padding: 36px 40px;
+        }
+
+        .research-card h3 {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 21px;
+
+            margin-bottom: 14px;
+        }
+
+        .research-card p {
+            color: var(--steel);
+
+            max-width: 850px;
+
+            margin-bottom: 18px;
+            font-size: 15px;
+        }
+
+            .research-link {
+                display: inline-block;
+                margin-top: 12px;
+            
+                color: var(--blue);
+            
+                font-family: var(--mono);
+                font-size: 10.5px;
+                letter-spacing: 0.7px;
+                text-transform: uppercase;
+            
+                text-decoration: none;
+            
+                border-bottom: 1px solid var(--blue-dim);
+                padding-bottom: 3px;
+            
+                transition: 0.2s ease;
+            }
+            
+            .research-link:hover {
+                color: var(--paper);
+                border-color: var(--paper);
+            }
+       /* =========================================================
+   CONTACT LINKS
+========================================================= */
+
+.contact-links {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 11px 18px;
+
+    border: 1px solid var(--line-strong);
+    background: var(--panel);
+
+    color: var(--paper);
+
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: none;
+
+    text-decoration: none;
+
+    transition: all 0.2s ease;
+}
+
+.contact-link:hover {
+    border-color: var(--blue);
+    color: var(--blue);
+    background: var(--panel-2);
+}
+
+
+        /* =========================================================
+           CASE STUDY MODAL
+        ========================================================= */
+
+        .case-study-modal {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 2000;
+
+            display: none;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 25px;
+
+            background: rgba(10, 12, 14, 0.86);
+        }
+
+        .case-study-modal.active {
+            display: flex;
+        }
+
+        .case-study-content {
+            width: 100%;
+            max-width: 820px;
+
+            max-height: 85vh;
+
+            overflow-y: auto;
+
+            background: var(--panel);
+
+            padding: 44px;
+
+            position: relative;
+        }
+
+        .case-study-number {
+            color: var(--blue);
+
+            font-family: var(--mono);
+            font-size: 11px;
+            letter-spacing: 1.5px;
+
+            margin-bottom: 12px;
+        }
+
+        .case-study-content h2 {
+            font-family: var(--display);
+            font-weight: 700;
+            font-size: 30px;
+
+            margin-bottom: 20px;
+        }
+
+        .case-study-content p {
+            color: var(--steel);
+
+            font-size: 15px;
+
+            margin-bottom: 18px;
+        }
+
+        .case-study-content h4 {
+            font-family: var(--mono);
+            font-size: 11.5px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+            color: var(--blue);
+
+            margin-top: 30px;
+
+            margin-bottom: 12px;
+        }
+
+        .case-study-content ul {
+            list-style: none;
+        }
+
+        .case-study-content li {
+            color: var(--steel);
+
+            font-size: 14px;
+
+            margin-bottom: 9px;
+            padding-left: 14px;
+            position: relative;
+        }
+
+        .case-study-content li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 6px;
+            height: 1px;
+            background: var(--steel-dim);
+        }
+
+        .case-study-close {
+            position: absolute;
+
+            top: 18px;
+            right: 18px;
+
+            width: 34px;
+            height: 34px;
+
+            border: 1px solid var(--line-strong);
+
+            background: transparent;
+
+            color: var(--paper);
+
+            font-size: 18px;
+
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+
+        .case-study-close:hover,
+        .case-study-close:focus {
+            background: var(--blue);
+            color: var(--ink);
+            border-color: var(--blue);
+            outline: none;
+        }
+
+        .case-study-content .featured-achievement {
+            margin: 6px 0 18px;
+        }
+        .case-study-content .table-wrap {
+    overflow-x: auto;
+    margin: 14px 0 10px;
+}
+
+.case-study-content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--mono);
+    font-size: 12px;
+}
+
+.case-study-content th,
+.case-study-content td {
+    text-align: left;
+    padding: 9px 10px;
+    color: var(--steel);
+    border-bottom: 1px solid var(--line);
+}
+
+.case-study-content th {
+    color: var(--blue);
+    font-size: 10.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom-color: var(--line-strong);
+}
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            padding: 28px 0;
+
+            color: var(--steel-dim);
+
+            font-family: var(--mono);
+            font-size: 11.5px;
+            letter-spacing: 0.5px;
+
+            text-align: center;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE — TABLET
+        ========================================================= */
+
+        @media (max-width: 900px) {
+
+            .nav-container {
+                flex-direction: column;
+
+                padding: 18px 0;
+
+                gap: 14px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+
+                justify-content: center;
+
+                gap: 16px;
+            }
+
+            .hero-inner {
+                padding: 40px 22px 0;
+            }
+
+            .title-block {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .title-block-field:nth-child(2n+1) {
+                border-left: none;
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+
+                gap: 34px;
+            }
+
+            .skill-card {
+                flex-basis: 46%;
+            }
+
+            .achievement-card {
+                flex-basis: 46%;
+            }
+
+            .projects-grid,
+            .experience-columns {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        /* =========================================================
+           RESPONSIVE — MOBILE
+        ========================================================= */
+
+        @media (max-width: 600px) {
+
+            section {
+                padding: 68px 0;
+            }
+
+            section h2 {
+                font-size: 27px;
+            }
+
+            .hero-content h2 {
+                font-size: 17px;
+            }
+
+            .hero-content p {
+                font-size: 14.5px;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+
+                align-items: stretch;
+            }
+
+            .hero-button {
+                text-align: center;
+            }
+
+            .title-block {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .skill-card,
+            .achievement-card {
+                flex-basis: 100%;
+            }
+
+            .project-image {
+                height: 220px;
+            }
+
+            .project-content {
+                padding: 22px 16px 16px;
+            }
+
+            .experience-card,
+            .research-card {
+                padding: 24px;
+            }
+
+            .experience-columns {
+                gap: 22px;
+            }
+
+            .experience-header h3 {
+                font-size: 19px;
+            }
+
+            .case-study-content {
+                padding: 30px 22px;
+
+                max-height: 90vh;
+            }
+
+            .case-study-content h2 {
+                font-size: 24px;
+            }
+
+            .spec-row {
+                flex-wrap: wrap;
+            }
+
+            .spec-row .spec-value {
+                max-width: 100%;
+                text-align: left;
+                flex-basis: 100%;
+            }
+
+            .spec-row .spec-leader {
+                display: none;
+            }
+        }
+         @media (max-width: 768px) {
+
+    .contact-links {
+        display: grid;
+        grid-template-columns: repeat(2, 130px);
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .contact-link {
+        padding: 10px 8px;
+        font-size: 10px;
+    }
+
+}
+
+}
+
+}
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================= */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================= -->
+
+    <nav>
+        <div class="nav-container">
+
+            <a href="#home" class="logo" aria-label="Abdul Wahid Sibly home">
+                A.W.SIBLY
+            </a>
+
+            <ul class="nav-links">
+
+                <li><a href="#about">About</a></li>
+
+                <li><a href="#skills">Skills</a></li>
+
+                <li><a href="#projects">Projects</a></li>
+
+                <li><a href="#achievements">Achievements</a></li>
+
+                <li><a href="#experience">Experience</a></li>
+
+                <li><a href="#research">Research</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <!-- =========================================================
+         HERO
+    ========================================================= -->
+
+    <section id="home">
+
+        <div class="hero-inner">
+
+            <div class="hero-content">
+
+                <div class="hero-label">
+                    Mechanical Engineering Portfolio
+                </div>
+
+                <h1>
+                    Abdul Wahid Sibly
+                </h1>
+
+                <h2>
+                    Mechanical Design Engineer — CAD, Product Development &amp; Simulation
+                </h2>
+
+                <p>
+                    Mechanical Engineering graduate from MIST with hands-on experience in
+                    mechanical design, CAD modeling, structural analysis, product development,
+                    manufacturing and motorsport engineering.
+                </p>
+
+                <div class="hero-actions">
+
+                    <!-- Place your Resume PDF in the same folder as index.html -->
+                    <a href="Resume.pdf"
+                       class="hero-button"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        Get My Resume
+                    </a>
+
+                    <a href="#projects"
+                       class="hero-button secondary">
+                        View Projects
+                    </a>
+
+                    <a href="#contact"
+                       class="hero-button secondary">
+                        Contact Me
+                    </a>
+
+                </div>
+
+            </div>
+
+            <dl class="title-block">
+
+                <div class="title-block-field">
+                    <dt>Drawn by</dt>
+                    <dd>A. W. Sibly</dd>
+                </div>
+
+                <div class="title-block-field">
+                    <dt>Discipline</dt>
+                    <dd>Mechanical Engineering</dd>
+                </div>
+
+                <div class="title-block-field">
+                    <dt>Institution</dt>
+                    <dd>MIST, Bangladesh</dd>
+                </div>
+
+                <div class="title-block-field">
+                    <dt>Scale</dt>
+                    <dd>N.T.S.</dd>
+                </div>
+
+                <div class="title-block-field">
+                    <dt>Rev</dt>
+                    <dd>2026</dd>
+                </div>
+
+            </dl>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         ABOUT
+    ========================================================= -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="sheet-tag">Sheet 01 <span>/ 07 — About</span></div>
+
+            <h2>
+                Engineering with purpose.
+            </h2>
+
+            <div class="about-grid">
+
+                <div class="about-copy">
+
+                    <p>
+                        I am a Mechanical Engineering graduate from the Military Institute of
+                        Science and Technology (MIST), Bangladesh, with a strong interest in
+                        mechanical design, product development, CAD modeling, structural analysis
+                        and engineering innovation.
+                    </p>
+
+                    <p>
+                        My experience includes Formula Student vehicle development, industrial
+                        machinery maintenance, engineering simulation, CAD-based product development
+                        and sustainable materials research. I enjoy turning engineering concepts into
+                        practical, manufacturable solutions.
+                    </p>
+
+                </div>
+
+                <div class="spec-sheet">
+
+                    <div class="spec-row">
+                        <span class="spec-label">CAD &amp; Product Design</span>
+                        <span class="spec-leader"></span>
+                        <span class="spec-value">Concept development, modeling and assemblies</span>
+                    </div>
+
+                    <div class="spec-row">
+                        <span class="spec-label">Analysis &amp; Simulation</span>
+                        <span class="spec-leader"></span>
+                        <span class="spec-value">FEA, structural analysis and CFD</span>
+                    </div>
+
+                    <div class="spec-row">
+                        <span class="spec-label">Design to Manufacturing</span>
+                        <span class="spec-leader"></span>
+                        <span class="spec-value">Fabrication, prototyping and validation</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         SKILLS
+    ========================================================= -->
+
+    <section id="skills">
+
+        <div class="container">
+
+            <div class="sheet-tag">Sheet 02 <span>/ 07 — Technical Skills</span></div>
+
+            <h2>
+                Tools I work with.
+            </h2>
+
+
+            <div class="skills-grid">
+
+
+                <div class="skill-card">
+
+                    <h3>CAD &amp; Design</h3>
+
+                    <ul>
+                        <li>SolidWorks</li>
+                        <li>Assembly Design</li>
+                        <li>Weldments</li>
+                        <li>Engineering Drawings</li>
+                        <li>Bill of Materials</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>Simulation &amp; Analysis</h3>
+
+                    <ul>
+                        <li>ANSYS Workbench</li>
+                        <li>Finite Element Analysis</li>
+                        <li>Static Structural Analysis</li>
+                        <li>Stress &amp; Deflection Analysis</li>
+                        <li>ANSYS Fluent</li>
+                        <li>MATLAB</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>Manufacturing</h3>
+
+                    <ul>
+                        <li>Design for Manufacturing</li>
+                        <li>Welding &amp; Fabrication</li>
+                        <li>Tolerances</li>
+                        <li>Assembly Planning</li>
+                        <li>Material Selection</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>Product Development</h3>
+
+                    <ul>
+                        <li>Concept Development</li>
+                        <li>CAD Modeling</li>
+                        <li>Design Iteration</li>
+                        <li>Prototype Development</li>
+                        <li>Design Validation</li>
+                    </ul>
+
+                </div>
+
+
+                <div class="skill-card">
+
+                    <h3>Motorsport Engineering</h3>
+
+                    <ul>
+                        <li>Spaceframe Chassis Design</li>
+                        <li>Vehicle Packaging</li>
+                        <li>Fabrication Planning</li>
+                        <li>Technical Regulations</li>
+                        <li>Team Engineering</li>
+                    </ul>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         PROJECTS
+    ========================================================= -->
+
+    <section id="projects">
+
+        <div class="container">
+
+            <div class="sheet-tag">Sheet 03 <span>/ 07 — Selected Projects</span></div>
+
+            <h2>
+                Engineering in practice.
+            </h2>
+
+
+            <div class="projects-grid">
+
+
+                <!-- =================================================
+                     PROJECT 01 — FEATURED
+                ================================================= -->
+
+                <div class="project-card dwg-frame">
+
+                    <div class="project-image">
+
+                        <img src="Project01/Furiosa1%2001.png"
+                             alt="Formula Student Chassis Design - Image 01"
+                             class="active">
+
+                        <img src="Project01/Furiosa1%2002.png"
+                             alt="Formula Student Chassis Design - Image 02">
+
+                        <img src="Project01/Furiosa1%2003.png"
+                             alt="Formula Student Chassis Design - Image 03">
+
+                        <img src="Project01/Furiosa1%2004.png"
+                             alt="Formula Student Chassis Design - Image 04">
+
+                        <img src="Project01/Furiosa1%2005.png"
+                             alt="Formula Student Chassis Design - Image 05">
+
+                        <img src="Project01/Furiosa1%2006.png"
+                             alt="Formula Student Chassis Design - Image 06">
+
+                        <img src="Project01/Furiosa1%2007.png"
+                             alt="Formula Student Chassis Design - Image 07">
+
+                        <img src="Project01/Furiosa1%2008.png"
+                             alt="Formula Student Chassis Design - Image 08">
+
+                        <img src="Project01/Furiosa1%2009.png"
+                             alt="Formula Student Chassis Design - Image 09">
+
+                        <img src="Project01/Furiosa1%2010.png"
+                             alt="Formula Student Chassis Design - Image 10">
+
+                        <img src="Project01/Furiosa1%2012.jpeg"
+                             alt="Formula Student Chassis Design - Image 12">
+
+                        <img src="Project01/Furiosa1%2013.jpeg"
+                             alt="Formula Student Chassis Design - Image 13">
+
+                        <img src="Project01/Furiosa1%2014.jpg"
+                             alt="Formula Student Chassis Design - Image 14">
+
+                        <img src="Project01/Furiosa1%2015.jpeg"
+                             alt="Formula Student Chassis Design - Image 15">
+
+                        <img src="Project01/Furiosa1%2016.jpeg"
+                             alt="Formula Student Chassis Design - Image 16">
+
+
+                        <button class="gallery-prev"
+                                onclick="changeImage(this, -1)"
+                                aria-label="Previous image">
+                            &#10094;
+                        </button>
+
+                        <button class="gallery-next"
+                                onclick="changeImage(this, 1)"
+                                aria-label="Next image">
+                            &#10095;
+                        </button>
+
+                        <div class="gallery-counter">
+                            1 / 15
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-primary">
+
+                            <div class="project-number">
+                                Drawing No. 01
+                            </div>
+
+                            <h3>
+                                Spaceframe Chassis Design
+                            </h3>
+
+                            <p>
+                                Designed the MIST Blitz Formula Student team's spaceframe chassis
+                                using SolidWorks Weldments, focusing on structural load paths,
+                                suspension mounting, driver ergonomics and fabrication feasibility.
+                                Structural integrity was evaluated using ANSYS, with design
+                                iterations aimed at improving stiffness-to-weight performance
+                                and manufacturability.
+                            </p>
+
+                            <div class="featured-achievement">
+
+                                <div class="featured-achievement-label">
+                                    Featured Achievement
+                                </div>
+
+                                <h4>
+                                    1st Place — Engineering Design, Formula Bharat 2025
+                                </h4>
+
+                                <p>
+                                    MIST Blitz Formula Student Team's Formula Bharat 2025
+                                    achievement was featured by The Daily Star.
+                                </p>
+
+                                <a href="https://www.thedailystar.net/campus/campus/news/mist-secures-first-place-formula-bharat-2025-engineering-design-crm-3712886"
+                                   target="_blank"
+                                   rel="noopener noreferrer">
+                                    Read the article →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="project-secondary">
+
+                            <div class="project-meta">
+                                <span>Design</span>
+                                <span>FEA</span>
+                                <span>Fabrication</span>
+                                <span>Validation</span>
+                            </div>
+
+
+                            <div class="tags">
+
+                                <span class="tag">SolidWorks</span>
+                                <span class="tag">Weldments</span>
+                                <span class="tag">ANSYS</span>
+                                <span class="tag">FEA</span>
+                                <span class="tag">Chassis Design</span>
+                                <span class="tag">Motorsport</span>
+
+                            </div>
+
+
+                            <div class="project-actions">
+
+                                <button class="project-button"
+                                        onclick="openCaseStudy('project1')">
+                                    View Case Study
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     PROJECT 02
+                ================================================= -->
+
+                <div class="project-card dwg-frame">
+
+                    <div class="project-image">
+
+                        <img src="images/radial-engine.png"
+                             alt="Radial Engine CAD Design"
+                             class="active">
+
+                        <img src="images/Front.png"
+                             alt="Radial Engine CAD Design - Front View">
+
+                        <img src="images/Top.png"
+                             alt="Radial Engine CAD Design - Top View">
+
+                        <img src="images/Right.png"
+                             alt="Radial Engine CAD Design - Side View">
+
+
+                        <button class="gallery-prev"
+                                onclick="changeImage(this, -1)"
+                                aria-label="Previous image">
+                            &#10094;
+                        </button>
+
+                        <button class="gallery-next"
+                                onclick="changeImage(this, 1)"
+                                aria-label="Next image">
+                            &#10095;
+                        </button>
+
+                        <div class="gallery-counter">
+                            1 / 4
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-number">
+                            Drawing No. 02
+                        </div>
+
+                        <h3>
+                            Radial Engine CAD Design &amp; Assembly
+                        </h3>
+
+                        <p>
+                            Designed individual engine components and developed a fully
+                            constrained radial engine assembly in SolidWorks, including
+                            engineering drawings and fit/interference checks.
+                        </p>
+
+
+                        <div class="project-meta">
+                            <span>CAD</span>
+                            <span>Assembly</span>
+                            <span>Drawings</span>
+                            <span>Validation</span>
+                        </div>
+
+
+                        <div class="tags">
+
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">CAD</span>
+                            <span class="tag">Assembly</span>
+                            <span class="tag">Engineering Drawing</span>
+                            <span class="tag">Mechanical Design</span>
+
+                        </div>
+
+
+                        <div class="project-actions">
+
+                            <button class="project-button"
+                                    onclick="openCaseStudy('project2')">
+                                View Case Study
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     PROJECT 03
+                ================================================= -->
+
+                <div class="project-card dwg-frame">
+
+                    <div class="project-image">
+
+                        <img src="Project03/scar-iso.png"
+                             alt="SCAR CAD Design - Isometric View"
+                             class="active">
+
+                        <img src="Project03/scar-isop.png"
+                             alt="SCAR CAD Design - Alternate Isometric View">
+
+                        <img src="Project03/scar-right.png"
+                             alt="SCAR CAD Design - Right View">
+                       
+                        <img src="Project03/scar-real.jpeg"
+                             alt="SCAR Physical Model">
+
+
+                        <button class="gallery-prev"
+                                onclick="changeImage(this, -1)"
+                                aria-label="Previous image">
+                            &#10094;
+                        </button>
+
+                        <button class="gallery-next"
+                                onclick="changeImage(this, 1)"
+                                aria-label="Next image">
+                            &#10095;
+                        </button>
+
+                        <div class="gallery-counter">
+                            1 / 4
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-number">
+                            Drawing No. 03
+                        </div>
+
+                        <h3>
+                            F1 Inspired Car from Scrap
+                        </h3>
+
+                        <p>
+                            Designed and fabricated a miniature Formula-1 inspired vehicle
+                            using recycled engine components, combining CAD modeling with
+                            hands-on workshop processes. The build involved fabrication
+                            planning, welding, laser cutting and machining.
+                        </p>
+
+
+                        <div class="project-meta">
+                            <span>Product Design</span>
+                            <span>Fabrication</span>
+                            <span>Prototyping</span>
+                            <span>Recycling</span>
+                        </div>
+
+
+                        <div class="tags">
+
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">CAD</span>
+                            <span class="tag">Fabrication</span>
+                            <span class="tag">Welding</span>
+                            <span class="tag">Machining</span>
+                            <span class="tag">Recycling</span>
+
+                        </div>
+
+
+                        <div class="project-actions">
+
+                            <button class="project-button"
+                                    onclick="openCaseStudy('project3')">
+                                View Case Study
+                            </button>
+
+                            <a href="Project03/scar-vid.mp4"
+                               class="project-video"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                Watch Video
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     PROJECT 04
+                ================================================= -->
+
+                <div class="project-card dwg-frame">
+
+                    <div class="project-image">
+
+                        <!-- Exact requested order: 01 → 02 → 3dp → b → f → r → s → ss -->
+
+                        <img src="Project04/fd%2001.png"
+                             alt="Folding Drone Frame Design - Image 01"
+                             class="active">
+
+                        <img src="Project04/fd%2002.png"
+                             alt="Folding Drone Frame Design - Image 02">
+
+                        <img src="Project04/fd%203dp.png"
+                             alt="Folding Drone Frame - 3D Printed Prototype">
+
+                        <img src="Project04/fd%20b.png"
+                             alt="Folding Drone Frame - Bottom View">
+
+                        <img src="Project04/fd%20f.png"
+                             alt="Folding Drone Frame - Front View">
+
+                        <img src="Project04/fd%20r.png"
+                             alt="Folding Drone Frame - Right View">
+
+                        <img src="Project04/fd%20s.png"
+                             alt="Folding Drone Frame - Side View">
+
+                        <img src="Project04/fd%20ss.png"
+                             alt="Folding Drone Frame - Structural View">
+
+
+                        <button class="gallery-prev"
+                                onclick="changeImage(this, -1)"
+                                aria-label="Previous image">
+                            &#10094;
+                        </button>
+
+                        <button class="gallery-next"
+                                onclick="changeImage(this, 1)"
+                                aria-label="Next image">
+                            &#10095;
+                        </button>
+
+                        <div class="gallery-counter">
+                            1 / 8
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-number">
+                            Drawing No. 04
+                        </div>
+
+                        <h3>
+                            Folding Drone Frame Design
+                        </h3>
+
+                        <p>
+                            Designed a lightweight folding drone frame with emphasis on the
+                            folding-arm mechanism, component mounting, manufacturability and
+                            assembly. The design was developed in SolidWorks and supported
+                            by fabrication, 3D printing and physical testing.
+                        </p>
+
+
+                        <div class="project-meta">
+                            <span>Product Design</span>
+                            <span>Mechanism</span>
+                            <span>3D Printing</span>
+                            <span>Testing</span>
+                        </div>
+
+
+                        <div class="tags">
+
+                            <span class="tag">SolidWorks</span>
+                            <span class="tag">CAD</span>
+                            <span class="tag">Product Design</span>
+                            <span class="tag">3D Printing</span>
+                            <span class="tag">Prototyping</span>
+
+                        </div>
+
+
+                        <div class="project-actions">
+
+                            <button class="project-button"
+                                    onclick="openCaseStudy('project4')">
+                                View Case Study
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     PROJECT 05
+                ================================================= -->
+
+                <div class="project-card dwg-frame">
+
+                    <div class="project-image">
+
+                        <img src="Project05/fff%2001.jpg"
+                             alt="Laminar Flow Analysis - Image 01"
+                             class="active">
+
+                        <img src="Project05/fff%2002.jpg"
+                             alt="Laminar Flow Analysis - Image 02">
+
+                        <img src="Project05/fff%2003.jpg"
+                             alt="Laminar Flow Analysis - Image 03">
+
+                        <img src="Project05/fff%2004.jpg"
+                             alt="Laminar Flow Analysis - Image 04">
+
+                        <img src="Project05/fff%2005.jpg"
+                             alt="Laminar Flow Analysis - Image 05">
+
+                        <img src="Project05/fff%2006.jpg"
+                             alt="Laminar Flow Analysis - Image 06">
+
+                        <img src="Project05/fff%2007.png"
+                             alt="Laminar Flow Analysis - Image 07">
+
+                        <img src="Project05/fff%2008.png"
+                             alt="Laminar Flow Analysis - Image 08">
+
+                        <img src="Project05/fff%2009.png"
+                             alt="Laminar Flow Analysis - Image 09">
+
+                        <img src="Project05/fff%2010.jpg"
+                             alt="Laminar Flow Analysis - Image 10">
+
+
+                        <button class="gallery-prev"
+                                onclick="changeImage(this, -1)"
+                                aria-label="Previous image">
+                            &#10094;
+                        </button>
+
+                        <button class="gallery-next"
+                                onclick="changeImage(this, 1)"
+                                aria-label="Next image">
+                            &#10095;
+                        </button>
+
+                        <div class="gallery-counter">
+                            1 / 10
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-content">
+
+                        <div class="project-number">
+                            Drawing No. 05
+                        </div>
+
+                        <h3>
+                            Laminar Flow Analysis in a Circular Pipe
+                        </h3>
+
+                        <p>
+                            Analyzed laminar flow through a circular pipe using ANSYS Fluent
+                            and compared the numerical results with analytical solutions.
+                            The study included geometry development, structured mesh generation,
+                            boundary conditions, convergence monitoring, grid-independence
+                            analysis and velocity/pressure distribution evaluation.
+                        </p>
+
+
+                        <div class="project-meta">
+                            <span>CFD</span>
+                            <span>Meshing</span>
+                            <span>Validation</span>
+                            <span>ANSYS Fluent</span>
+                        </div>
+
+
+                        <div class="tags">
+
+                            <span class="tag">ANSYS Fluent</span>
+                            <span class="tag">CFD</span>
+                            <span class="tag">Laminar Flow</span>
+                            <span class="tag">Mesh Independence</span>
+                            <span class="tag">Validation</span>
+
+                        </div>
+
+
+                        <div class="project-actions">
+
+                            <button class="project-button"
+                                    onclick="openCaseStudy('project5')">
+                                View Case Study
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                <!-- =================================================
+     PROJECT 06
+================================================= -->
+
+<div class="project-card dwg-frame">
+
+    <div class="project-image">
+
+        <img src="Project 06/bt%2001.png"
+             alt="Three-point bending test setup"
+             class="active">
+
+        <img src="Project 06/bt%2002.png"
+             alt="ANSYS total deformation at 7.848 N">
+
+        <img src="Project 06/bt%2003.png"
+             alt="ANSYS total deformation at 12.753 N">
+
+        <img src="Project 06/bt%2004.png"
+             alt="ANSYS total deformation at 18.653 N">
+
+        <button class="gallery-prev"
+                onclick="changeImage(this, -1)"
+                aria-label="Previous image">
+            &#10094;
+        </button>
+
+        <button class="gallery-next"
+                onclick="changeImage(this, 1)"
+                aria-label="Next image">
+            &#10095;
+        </button>
+
+        <div class="gallery-counter">
+            1 / 4
+        </div>
+
+    </div>
+
+    <div class="project-content">
+
+        <div class="project-number">
+            Drawing No. 06
+        </div>
+
+        <h3>
+            Bending Test on a Simply Supported Beam
+        </h3>
+
+        <p>
+            Validated an ANSYS static structural model against a three-point
+            bending experiment on a 7.95 mm diameter aluminium bar with a
+            500 mm span. Simulated deflections were compared with measured
+            values at three loads and agreed within 2%.
+        </p>
+
+        <div class="project-meta">
+            <span>FEA</span>
+            <span>Experiment</span>
+            <span>Validation</span>
+            <span>ANSYS</span>
+        </div>
+
+        <div class="tags">
+            <span class="tag">ANSYS Static Structural</span>
+            <span class="tag">FEA</span>
+            <span class="tag">Beam Bending</span>
+            <span class="tag">Experimental Validation</span>
+        </div>
+
+        <div class="project-actions">
+            <button class="project-button"
+                    onclick="openCaseStudy('project6')">
+                View Case Study
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         ACHIEVEMENTS
+    ========================================================= -->
+
+    <section id="achievements">
+
+        <div class="container">
+
+            <div class="sheet-tag">Sheet 04 <span>/ 07 — Achievements</span></div>
+
+            <h2>
+                Milestones along the way.
+            </h2>
+
+
+            <div class="achievements-grid">
+
+                <div class="achievement-card">
+
+                    <h3>
+                        1st Place — Engineering Design
+                    </h3>
+
+                    <p>
+                        Formula Bharat 2025 — MIST Blitz Formula Student Team.
+                        Featured by The Daily Star.
+                    </p>
+
+                </div>
+
+
+                <div class="achievement-card">
+
+                    <h3>
+                        Senior Engineer
+                    </h3>
+
+                    <p>
+                        MIST Blitz Formula Student Team
+                    </p>
+
+                </div>
+
+
+                <div class="achievement-card">
+
+                    <h3>
+                        Best Foreign Team Award
+                    </h3>
+
+                    <p>
+                        Formula Student Combustion China 2025
+                    </p>
+
+                </div>
+
+
+                <div class="achievement-card">
+
+                    <h3>
+                        Best Presentation Performance
+                    </h3>
+
+                    <p>
+                        Static Event — Formula Student Competition
+                    </p>
+
+                </div>
+
+
+                <div class="achievement-card">
+
+                    <h3>
+                        4th Place
+                    </h3>
+
+                    <p>
+                        Business Plan Presentation — Formula Student Combustion China 2025
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         EXPERIENCE
+    ========================================================= -->
+
+    <section id="experience">
+
+        <div class="container">
+
+            <div class="sheet-tag">Sheet 05 <span>/ 07 — Experience</span></div>
+
+            <h2>
+                Where I've worked.
+            </h2>
+
+
+            <div class="experience-card dwg-frame">
+
+
+                <div class="experience-header">
+
+                    <h3>
+                        Team Member — MIST Blitz Formula SAE Team
+                    </h3>
+
+                    <div class="experience-duration">
+                        April 2024 – August 2026
+                    </div>
+
+                </div>
+
+
+                <p>
+                    Served as a member of the Chassis and Aerodynamics, Logistics Operations,
+                    and Finance teams within MIST Blitz Formula SAE, the university's Formula
+                    Student program. Designed the team's first Formula Student spaceframe chassis
+                    and validated its structural integrity through SolidWorks modeling and ANSYS
+                    simulation, iterating on the design to optimize stiffness-to-weight
+                    performance. Supervised fabrication to ensure dimensional accuracy and full
+                    compliance with Formula Student regulations, and verified critical safety
+                    systems including the headrest and mounting assembly.
+                </p>
+
+
+                <div class="experience-columns">
+
+
+                    <div class="experience-column">
+
+                        <h4>
+                            Technical
+                        </h4>
+
+                        <ul>
+
+                            <li>
+                                Designed the team's first spaceframe chassis
+                            </li>
+
+                            <li>
+                                Validated structural integrity in SolidWorks and ANSYS
+                            </li>
+
+                            <li>
+                                Optimized design through simulation and testing
+                            </li>
+
+                            <li>
+                                Supervised fabrication and rule compliance
+                            </li>
+
+                            <li>
+                                Verified headrest and mounting safety systems
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="experience-column">
+
+                        <h4>
+                            Finance
+                        </h4>
+
+                        <ul>
+
+                            <li>
+                                Managed the chassis budget
+                            </li>
+
+                            <li>
+                                Monitored expenditures
+                            </li>
+
+                            <li>
+                                Coordinated material procurement
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                    <div class="experience-column">
+
+                        <h4>
+                            Logistics
+                        </h4>
+
+                        <ul>
+
+                            <li>
+                                Procured tools and workshop equipment
+                            </li>
+
+                            <li>
+                                Coordinated component weighing and packaging
+                            </li>
+
+                            <li>
+                                Optimized crate dimensions for airline cargo rules
+                            </li>
+
+                            <li>
+                                Ensured transport for international competition
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+                        <!-- INTERNSHIP: BANGLA TRAC LIMITED -->
+            
+            <div class="experience-card dwg-frame">
+            
+                <div class="experience-header">
+            
+                    <h3>
+                        Industrial Trainee — Bangla Trac Limited (Bangla CAT)
+                    </h3>
+            
+                    <div class="experience-duration">
+                        May, 2025 – June, 2025
+                    </div>
+            
+                </div>
+            
+                <p>
+                    Completed a 4-week Industrial Training Program at Bangla Trac Limited,
+                    the authorized dealer of Caterpillar Inc. USA in Bangladesh. The program
+                    covered maintenance, overhauling, commissioning and troubleshooting of
+                    Caterpillar industrial engines, gensets and machines, with hands-on work
+                    on CAT G3512H and CAT G3520H engines.
+                </p>
+            
+                <div class="experience-columns">
+            
+                    <div class="experience-column">
+                        <h4>Engine Overhauling</h4>
+                        <ul>
+                            <li>Overhauling of CAT G3512H industrial engines</li>
+                            <li>Overhauling of CAT G3520H industrial engines</li>
+                        </ul>
+                    </div>
+            
+                    <div class="experience-column">
+                        <h4>Servicing &amp; Maintenance</h4>
+                        <ul>
+                            <li>Alternator servicing</li>
+                            <li>Piston, camshaft and bearing servicing</li>
+                            <li>Cooling system servicing and maintenance</li>
+                        </ul>
+                    </div>
+            
+                    <div class="experience-column">
+                        <h4>Equipment &amp; Technical</h4>
+                        <ul>
+                            <li>Operation of load banks, jib cranes and honing machines</li>
+                            <li>Simulation and system design</li>
+                            <li>Technical presentations</li>
+                        </ul>
+                    </div>
+            
+                </div>
+            
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         RESEARCH
+    ========================================================= -->
+
+    <section id="research">
+
+        <div class="container">
+
+            <div class="sheet-tag">Sheet 06 <span>/ 07 — Research</span></div>
+
+            <h2>
+                Publication &amp; Certification.
+            </h2>
+
+
+            <div class="research-stack">
+
+
+                <div class="research-card dwg-frame">
+
+                    <h3>
+                        Eco-Friendly Ecobricks for Sustainable Waste Management
+                    </h3>
+
+                    <p>
+                        Published research focused on the development and application of
+                        eco-friendly ecobricks as a sustainable approach to waste management
+                        and material reuse.
+                    </p>
+                    <a href="https://icmeas2025.mist.ac.bd/paper?p=C08-0010&u=mr2k"
+                       class="research-link"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        View Certificate →
+                    </a>
+                    <div class="tags">
+
+                        <span class="tag">Sustainable Materials</span>
+                        <span class="tag">Waste Management</span>
+                        <span class="tag">Research</span>
+                        <span class="tag">ICMEAS 2025</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="research-card dwg-frame">
+
+                    <h3>
+                        Business Analysis &amp; Process Management
+                    </h3>
+
+                    <p>
+                        Professional certification completed through Coursera in July 2026.
+                    </p>
+                                    <a href="https://www.coursera.org/account/accomplishments/verify/C5FO2NDAIZW1"
+                   class="research-link"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    View Certificate →
+                                    </a>
+
+                    <div class="tags">
+
+                        <span class="tag">Coursera</span>
+                        <span class="tag">Business Analysis</span>
+                        <span class="tag">Process Management</span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CONTACT
+    ========================================================= -->
+
+    <section id="contact" style="border-bottom: none;">
+
+        <div class="container">
+
+            <div class="sheet-tag">Sheet 07 <span>/ 07 — Contact</span></div>
+
+            <h2>
+                Let's build something.
+            </h2>
+
+
+            <div class="contact-grid">
+
+                <p class="contact-intro">
+
+                    I am interested in opportunities involving mechanical design,
+                    CAD engineering, product development, simulation, manufacturing
+                    and engineering innovation.
+
+                    <br><br>
+
+                    If you are working on a product, machine, vehicle or engineering
+                    system that needs thoughtful mechanical design, I'd be glad to
+                    connect.
+
+                </p>
+
+<div class="contact-links">
+
+    <a href="mailto:siblynoman05@gmail.com"
+       class="contact-link">
+        Email
+    </a>
+
+    <a href="tel:+8801873169474"
+       class="contact-link">
+        Phone
+    </a>
+
+    <a href="https://www.linkedin.com/in/awsibly971/"
+       class="contact-link"
+       target="_blank"
+       rel="noopener noreferrer">
+        LinkedIn
+    </a>
+
+    <a href="https://github.com/abdulwahidsibly"
+       class="contact-link"
+       target="_blank"
+       rel="noopener noreferrer">
+        GitHub
+    </a>
+
+</div>
+
+</div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================================================
+         CASE STUDY MODAL
+    ========================================================= -->
+
+    <div id="caseStudyModal"
+         class="case-study-modal"
+         role="dialog"
+         aria-modal="true"
+         aria-labelledby="caseStudyTitle">
+
+        <div class="case-study-content dwg-frame">
+
+            <button class="case-study-close"
+                    onclick="closeCaseStudy()"
+                    aria-label="Close case study">
+                &times;
+            </button>
+
+            <div id="caseStudyBody"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+
+    <footer>
+
+        <div class="container">
+
+            © 2026 Abdul Wahid Sibly. All rights reserved.
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================= -->
+
+    <script>
+
+
+        /* =========================================================
+           IMAGE GALLERY
+        ========================================================= */
+
+        function changeImage(button, direction) {
+
+            const gallery = button.closest('.project-image');
+
+            const images = gallery.querySelectorAll('img');
+
+            const counter = gallery.querySelector('.gallery-counter');
+
+            let currentIndex = 0;
+
+
+            images.forEach((image, index) => {
+
+                if (image.classList.contains('active')) {
+                    currentIndex = index;
+                }
+
+            });
+
+
+            images[currentIndex].classList.remove('active');
+
+            currentIndex += direction;
+
+
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+
+
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            }
+
+
+            images[currentIndex].classList.add('active');
+
+            counter.textContent =
+                (currentIndex + 1) + ' / ' + images.length;
+
+        }
+
+
+        /* =========================================================
+           CASE STUDY DATA
+        ========================================================= */
+
+        const caseStudies = {
+
+            project1: {
+
+                number: "Drawing No. 01",
+
+                title: "Spaceframe Chassis Design",
+
+                description:
+                    "Designed the MIST Blitz Formula Student team's spaceframe chassis using SolidWorks Weldments, with emphasis on structural load paths, suspension mounting, driver ergonomics, fabrication feasibility and structural validation.",
+
+                approach: [
+                    "Developed the chassis geometry using SolidWorks Weldments.",
+                    "Considered suspension mounting and vehicle packaging requirements.",
+                    "Evaluated structural integrity using ANSYS.",
+                    "Iterated the design based on engineering analysis.",
+                    "Considered fabrication feasibility and dimensional accuracy.",
+                    "Supported fabrication and Formula Student rule compliance."
+                ],
+
+                focus:
+                    "CAD design, spaceframe architecture, structural analysis, manufacturability and motorsport engineering.",
+
+                results:
+                    "The chassis helped MIST Blitz Formula Student Team place 1st in Engineering Design at Formula Bharat 2025 — an achievement featured by The Daily Star. Additional measured results (torsional stiffness, factor of safety, mass, max stress/displacement from ANSYS) can be added here once available."
+
+            },
+
+
+            project2: {
+
+                number: "Drawing No. 02",
+
+                title: "Radial Engine CAD Design & Assembly",
+
+                description:
+                    "Developed individual radial engine components and assembled them into a fully constrained SolidWorks model.",
+
+                approach: [
+                    "Created individual mechanical components in SolidWorks.",
+                    "Developed the complete engine assembly.",
+                    "Applied assembly constraints.",
+                    "Performed fit and interference checks.",
+                    "Prepared engineering drawings for selected components."
+                ],
+
+                focus:
+                    "Mechanical CAD, assembly design, engineering drawings and design verification.",
+
+                results:
+                    "This section can be expanded with measured results — number of unique parts/components, interference-check outcomes, and tolerance stack-up notes."
+
+            },
+
+
+            project3: {
+
+                number: "Drawing No. 03",
+
+                title: "F1 Car from Scrap",
+
+                description:
+                    "Designed and fabricated a miniature Formula-1 inspired vehicle using recycled engine components and workshop manufacturing processes.",
+
+                approach: [
+                    "Developed the concept and CAD model.",
+                    "Planned fabrication using available materials.",
+                    "Integrated recycled engine components.",
+                    "Applied welding and machining processes.",
+                    "Used laser cutting during fabrication.",
+                    "Produced and evaluated a physical prototype."
+                ],
+
+                focus:
+                    "Product development, fabrication, machining, welding, prototyping and sustainable engineering.",
+
+                results:
+                    "This section can be expanded with measured results — final weight, build time, cost, and any performance or test-run notes."
+
+            },
+
+
+            project4: {
+
+                number: "Drawing No. 04",
+
+                title: "Folding Drone Frame Design",
+
+                description:
+                    "Designed a lightweight folding drone frame with emphasis on the folding-arm mechanism, component mounting, manufacturability and assembly.",
+
+                approach: [
+                    "Developed the frame concept in SolidWorks.",
+                    "Designed the folding-arm mechanism.",
+                    "Considered component mounting and assembly requirements.",
+                    "Prepared the design for fabrication and prototyping.",
+                    "Produced a 3D-printed prototype.",
+                    "Supported the design through physical testing."
+                ],
+
+                focus:
+                    "Product design, mechanism development, CAD modeling, prototyping and design validation.",
+
+                results:
+                    "This section can be expanded with measured results — frame weight, fold/deploy time, print material, and any flight- or load-test results."
+
+            },
+
+
+            project5: {
+
+                number: "Drawing No. 05",
+
+                title: "Laminar Flow Analysis in a Circular Pipe",
+
+                description:
+                    "Analyzed laminar flow through a circular pipe using ANSYS Fluent and compared numerical results with analytical solutions.",
+
+                approach: [
+                    "Developed the computational geometry.",
+                    "Generated a structured mesh.",
+                    "Defined appropriate boundary conditions.",
+                    "Monitored solution convergence.",
+                    "Performed grid-independence analysis.",
+                    "Evaluated velocity and pressure distributions.",
+                    "Compared numerical results with analytical expectations."
+                ],
+
+                focus:
+                    "CFD, ANSYS Fluent, meshing, convergence, validation and fluid-flow analysis.",
+
+                results:
+                    "This section can be expanded with measured results — Reynolds number range tested, mesh element count at convergence, percent error vs. the analytical solution, and the entrance length result."
+
+            },
+                        project6: {
+
+                number: "Drawing No. 06",
+
+                title: "Bending Test on a Simply Supported Beam",
+
+                description:
+                    "Investigated how an aluminium beam deflects under load in a three-point bending test, and compared the measured deflections with an ANSYS static structural simulation to check the accuracy of the model.",
+
+                approach: [
+                    "Set up a three-point bending test on a 7.95 mm diameter aluminium bar with a 500 mm span.",
+                    "Applied three loads (7.848 N, 12.753 N and 18.653 N) at the centre of the beam and measured the deflection.",
+                    "Modelled the same beam in ANSYS 2020 R1 (Static Structural) and applied the same loads.",
+                    "Extracted the maximum total deformation for each load case.",
+                    "Compared experimental and simulated deflections using percentage error."
+                ],
+
+                focus:
+                    "Finite element analysis, static structural simulation, beam deflection and experimental validation.",
+
+                results: `
+                    The simulation tracked the experiment closely at all three loads, with a maximum error of 1.86%.
+                    <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Load (N)</th>
+                                <th>Experimental (mm)</th>
+                                <th>ANSYS (mm)</th>
+                                <th>Error (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>7.848</td><td>1.53</td><td>1.5357</td><td>0.37</td></tr>
+                            <tr><td>12.753</td><td>2.45</td><td>2.4956</td><td>1.86</td></tr>
+                            <tr><td>18.653</td><td>3.60</td><td>3.65</td><td>1.39</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    Error = (Experimental − ANSYS) / Experimental × 100, shown as an absolute value.
+                `
+
+            }
+
+        };
+
+
+        /* =========================================================
+           OPEN CASE STUDY
+        ========================================================= */
+
+        function openCaseStudy(projectId) {
+
+            const project = caseStudies[projectId];
+
+            if (!project) {
+                return;
+            }
+
+
+            const modal = document.getElementById('caseStudyModal');
+
+            const body = document.getElementById('caseStudyBody');
+
+
+            let approachHTML = "";
+
+            project.approach.forEach(item => {
+
+                approachHTML += `<li>${item}</li>`;
+
+            });
+
+
+            body.innerHTML = `
+
+                <div class="case-study-number">
+                    ${project.number}
+                </div>
+
+                <h2 id="caseStudyTitle">
+                    ${project.title}
+                </h2>
+
+                <p>
+                    ${project.description}
+                </p>
+
+                <h4>
+                    Engineering Approach
+                </h4>
+
+                <ul>
+                    ${approachHTML}
+                </ul>
+
+                <h4>
+                    Engineering Focus
+                </h4>
+
+                <p>
+                    ${project.focus}
+                </p>
+
+                <h4>
+                    Results &amp; Validation
+                </h4>
+
+             <div class="case-study-results">
+                    ${project.results}
+             </div>
+
+            `;
+
+
+            modal.classList.add('active');
+
+            document.body.classList.add('modal-open');
+
+        }
+
+
+        /* =========================================================
+           CLOSE CASE STUDY
+        ========================================================= */
+
+        function closeCaseStudy() {
+
+            const modal =
+                document.getElementById('caseStudyModal');
+
+            modal.classList.remove('active');
+
+            document.body.classList.remove('modal-open');
+
+        }
+
+
+        /* =========================================================
+           CLOSE MODAL BY CLICKING OUTSIDE
+        ========================================================= */
+
+        document
+            .getElementById('caseStudyModal')
+            .addEventListener('click', function(event) {
+
+                if (event.target === this) {
+
+                    closeCaseStudy();
+
+                }
+
+            });
+
+
+        /* =========================================================
+           CLOSE MODAL WITH ESC
+        ========================================================= */
+
+        document.addEventListener('keydown', function(event) {
+
+            if (event.key === 'Escape') {
+
+                closeCaseStudy();
+
+            }
+
+        });
+
+
+    </script>
+
+</body>
+
+</html>
