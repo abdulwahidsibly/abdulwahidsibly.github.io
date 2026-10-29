@@ -1251,6 +1251,33 @@
         .case-study-content .featured-achievement {
             margin: 6px 0 18px;
         }
+        .case-study-content .table-wrap {
+    overflow-x: auto;
+    margin: 14px 0 10px;
+}
+
+.case-study-content table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--mono);
+    font-size: 12px;
+}
+
+.case-study-content th,
+.case-study-content td {
+    text-align: left;
+    padding: 9px 10px;
+    color: var(--steel);
+    border-bottom: 1px solid var(--line);
+}
+
+.case-study-content th {
+    color: var(--blue);
+    font-size: 10.5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom-color: var(--line-strong);
+}
 
 
         /* =========================================================
@@ -2322,6 +2349,86 @@
                     </div>
 
                 </div>
+                <!-- =================================================
+     PROJECT 06
+================================================= -->
+
+<div class="project-card dwg-frame">
+
+    <div class="project-image">
+
+        <img src="Project06/bt%2001.png"
+             alt="Three-point bending test setup"
+             class="active">
+
+        <img src="Project06/bt%2002.png"
+             alt="ANSYS total deformation at 7.848 N">
+
+        <img src="Project06/bt%2003.png"
+             alt="ANSYS total deformation at 12.753 N">
+
+        <img src="Project06/bt%2004.png"
+             alt="ANSYS total deformation at 18.653 N">
+
+        <button class="gallery-prev"
+                onclick="changeImage(this, -1)"
+                aria-label="Previous image">
+            &#10094;
+        </button>
+
+        <button class="gallery-next"
+                onclick="changeImage(this, 1)"
+                aria-label="Next image">
+            &#10095;
+        </button>
+
+        <div class="gallery-counter">
+            1 / 4
+        </div>
+
+    </div>
+
+    <div class="project-content">
+
+        <div class="project-number">
+            Drawing No. 06
+        </div>
+
+        <h3>
+            Bending Test on a Simply Supported Beam
+        </h3>
+
+        <p>
+            Validated an ANSYS static structural model against a three-point
+            bending experiment on a 7.95 mm diameter aluminium bar with a
+            500 mm span. Simulated deflections were compared with measured
+            values at three loads and agreed within 2%.
+        </p>
+
+        <div class="project-meta">
+            <span>FEA</span>
+            <span>Experiment</span>
+            <span>Validation</span>
+            <span>ANSYS</span>
+        </div>
+
+        <div class="tags">
+            <span class="tag">ANSYS Static Structural</span>
+            <span class="tag">FEA</span>
+            <span class="tag">Beam Bending</span>
+            <span class="tag">Experimental Validation</span>
+        </div>
+
+        <div class="project-actions">
+            <button class="project-button"
+                    onclick="openCaseStudy('project6')">
+                View Case Study
+            </button>
+        </div>
+
+    </div>
+
+</div>
 
 
             </div>
@@ -2997,6 +3104,49 @@
                 results:
                     "This section can be expanded with measured results — Reynolds number range tested, mesh element count at convergence, percent error vs. the analytical solution, and the entrance length result."
 
+            },
+                        project6: {
+
+                number: "Drawing No. 06",
+
+                title: "Bending Test on a Simply Supported Beam",
+
+                description:
+                    "Investigated how an aluminium beam deflects under load in a three-point bending test, and compared the measured deflections with an ANSYS static structural simulation to check the accuracy of the model.",
+
+                approach: [
+                    "Set up a three-point bending test on a 7.95 mm diameter aluminium bar with a 500 mm span.",
+                    "Applied three loads (7.848 N, 12.753 N and 18.653 N) at the centre of the beam and measured the deflection.",
+                    "Modelled the same beam in ANSYS 2020 R1 (Static Structural) and applied the same loads.",
+                    "Extracted the maximum total deformation for each load case.",
+                    "Compared experimental and simulated deflections using percentage error."
+                ],
+
+                focus:
+                    "Finite element analysis, static structural simulation, beam deflection and experimental validation.",
+
+                results: `
+                    The simulation tracked the experiment closely at all three loads, with a maximum error of 1.86%.
+                    <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Load (N)</th>
+                                <th>Experimental (mm)</th>
+                                <th>ANSYS (mm)</th>
+                                <th>Error (%)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>7.848</td><td>1.53</td><td>1.5357</td><td>0.37</td></tr>
+                            <tr><td>12.753</td><td>2.45</td><td>2.4956</td><td>1.86</td></tr>
+                            <tr><td>18.653</td><td>3.60</td><td>3.65</td><td>1.39</td></tr>
+                        </tbody>
+                    </table>
+                    </div>
+                    Error = (Experimental − ANSYS) / Experimental × 100, shown as an absolute value.
+                `
+
             }
 
         };
@@ -3063,9 +3213,9 @@
                     Results &amp; Validation
                 </h4>
 
-                <p>
+             <div class="case-study-results">
                     ${project.results}
-                </p>
+             </div>
 
             `;
 
