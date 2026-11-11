@@ -1168,6 +1168,17 @@
                 color: var(--paper);
                 border-color: var(--paper);
             }
+                 .research-links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 14px 28px;   /* row gap, column gap */
+                margin-top: 12px;
+                margin-bottom: 18px;
+            }
+            
+            .research-links .research-link {
+                margin-top: 0;
+            }
        /* =========================================================
    CONTACT LINKS
 ========================================================= */
@@ -2799,18 +2810,22 @@
                     Credential ID: C-AU5W2S6DMN
                 </p>
             
-                <a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-AU5W2S6DMN"
-                   class="research-link"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    Verify Certificate →
-                
-                 <a href="Certificates/cswa.jpg"
-   class="research-link"
-   data-large
-   onclick="openCertificate(event, this, 'Certified SOLIDWORKS Associate (CSWA)')">
-       View Certificate Image →
-                </a>
+                <div class="research-links">
+
+    <a href="https://cv.virtualtester.com/qr/?b=SLDWRKS&i=C-AU5W2S6DMN"
+       class="research-link"
+       target="_blank"
+       rel="noopener noreferrer">
+        Verify Certificate →
+    </a>
+
+    <a href="Certificates/cswa.jpg"
+       class="research-link"
+       onclick="openCertificate(event, this, 'Certified SOLIDWORKS Associate (CSWA)')">
+        View Certificate Image →
+    </a>
+
+                </div>
             
                 <div class="tags">
             
